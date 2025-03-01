@@ -8,6 +8,7 @@ import Cadastro from "./pages/home/cadastro/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
 import ListaPlanos from "./components/planos/listaplanos/ListaPlanos";
 import FormPlano from "./components/planos/formplano/FormPlano";
+import DeletarPlano from "./components/planos/deletarplano/DeletarPlano";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/planos" element={<ListaPlanos />} />
               <Route path="/cadastrarplano" element={<FormPlano />} />
               <Route path="/editarplano/:id" element={<FormPlano />} />
+              <Route path="/deletarplano/:id" element={<DeletarPlano />} />
             </Routes>
           </div>
           <Footer />
