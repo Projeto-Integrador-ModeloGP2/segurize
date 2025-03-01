@@ -8,9 +8,10 @@ interface CardPlanosProps {
 function CardPlanos({ plano }: CardPlanosProps) {
   return (
     <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-      <p className="p-2 text-2xl text-center bg-blue-200 h-full">
-        <strong>Seguradora:</strong> {plano.seguradora ? plano.seguradora.nome : "Não informado"}
-      </p>
+      <header className="py-2 px-6 bg-indigo-800 text-white font-bold text-2xl text-center">
+      <h1>Seguradora {plano.seguradora ? plano.seguradora.nome : "Não informado"}</h1>
+      </header>
+
       <p className="p-2 text-1xl bg-white h-full">
         <strong>Plano:</strong> {plano.nome}
       </p>
@@ -29,8 +30,7 @@ function CardPlanos({ plano }: CardPlanosProps) {
       <p className="p-2 text-1xl bg-white h-full">
         <strong>Status:</strong> {plano.status ? "Ativo" : "Inativo"}
       </p>
-      
-      
+
       <div className="flex">
         <Link
           to={`/editarplano/${plano.id}`}
@@ -40,11 +40,13 @@ function CardPlanos({ plano }: CardPlanosProps) {
           <button>Editar</button>
         </Link>
 
-        <Link to={`/deletarplano/${plano.id}`} 
-	className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-		flex items-center justify-center'>
-	<button>Deletar</button>
-</Link>
+        <Link
+          to={`/deletarplano/${plano.id}`}
+          className="text-slate-100 bg-red-400 hover:bg-red-700 w-full 
+		flex items-center justify-center"
+        >
+          <button>Deletar</button>
+        </Link>
       </div>
     </div>
   );

@@ -3,16 +3,16 @@
 import { useState, useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
-import Plano from "../../../models/Plano"
+import Seguradora from "../../../models/Seguradora"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import { ToastAlerta } from "../../../utils/ToastAlerta"
 
-function DeletarPlano() {
+function DeletarSeguradora() {
 
     const navigate = useNavigate()
 
-    const [plano, setPlano] = useState<Plano>({} as Plano)
+    const [seguradora, setSeguradora] = useState<Seguradora>({} as Seguradora)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     
     const { usuario, handleLogout } = useContext(AuthContext)
@@ -22,7 +22,7 @@ function DeletarPlano() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/planos/${id}`, setPlano, {
+            await buscar(`/seguradoras/${id}`, setSeguradora, {
                 headers: {
                     'Authorization': token
                 }
@@ -47,23 +47,23 @@ function DeletarPlano() {
         }
     }, [id])
 
-    async function deletarPlano() {
+    async function deletarSeguradora() {
         setIsLoading(true)
 
         try {
-            await deletar(`/planos/${id}`, {
+            await deletar(`/seguradoras/${id}`, {
                 headers: {
                     'Authorization': token
                 }
             })
 
-            ToastAlerta("Plano apagado com sucesso!", "sucesso")
+            ToastAlerta("Seguradora apagada com sucesso!", "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
-            }else {
-                ToastAlerta("Erro ao deletar o plano.", "erro")
+            } else {
+                ToastAlerta("Erro ao deletar a seguradora.", "erro")
             }
         }
 
@@ -72,36 +72,20 @@ function DeletarPlano() {
     }
 
     function retornar() {
-        navigate("/planos")
+        navigate("/seguradoras")
     }
     
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar plano</h1>
+            <h1 className='text-4xl text-center my-4'>Deletar Seguradora</h1>
             <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o plano a seguir?</p>
+                Você tem certeza de que deseja apagar a seguradora a seguir?</p>
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <p className="p-2 text-2xl text-center bg-blue-200 h-full">
-        <strong>Seguradora</strong> {plano.seguradora ? plano.seguradora.nome : "Não informado"}
-      </p>
-      <p className="p-2 text-1xl bg-white h-full">
-        <strong>Plano:</strong> {plano.nome}
-      </p>
-      <p className="p-2 text-1xl bg-white h-full">
-        <strong>Descrição:</strong> {plano.descricao}
-      </p>
-      <p className="p-2 text-1xl bg-white h-full">
-        <strong>Valor (R$):</strong> {plano.valor}
-      </p>
-      <p className="p-2 text-1xl bg-white h-full">
-        <strong>Vigência:</strong> {plano.vigencia}
-      </p>
-      <p className="p-2 text-1xl bg-white h-full">
-        <strong>Franquia (R$):</strong> {plano.franquia}
-      </p>
-      <p className="p-2 text-1xl bg-white h-full">
-        <strong>Status:</strong> {plano.status ? "Ativo" : "Inativo"}
-      </p>
+                <header 
+                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl text-center'>
+                    {seguradora.nome}
+                </header>
+                <p className='p-8 text-3xl bg-slate-200 h-full'>{seguradora.especialidade}</p>
                 <div className="flex">
                     <button 
                         className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
@@ -111,8 +95,8 @@ function DeletarPlano() {
                     <button 
                         className='w-full text-slate-100 bg-indigo-400 
                                    hover:bg-indigo-600 flex items-center justify-center'
-                                   onClick={deletarPlano}>
-                        {isLoading ?
+                                   onClick={deletarSeguradora}>
+                        {isLoading ? 
                             <RotatingLines
                                 strokeColor="white"
                                 strokeWidth="5"
@@ -128,4 +112,4 @@ function DeletarPlano() {
         </div>
     )
 }
-export default DeletarPlano
+export default DeletarSeguradora

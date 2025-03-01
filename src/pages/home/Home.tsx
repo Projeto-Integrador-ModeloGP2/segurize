@@ -1,3 +1,6 @@
+import ListaPlanos1 from "../../components/planos/listaplanos/ListaPlanos1";
+import ModalPlano from "../../components/planos/modalplanos/ModalPlanos";
+
 function Home() {
   return (
     <>
@@ -19,16 +22,10 @@ function Home() {
                 importante para você.
               </p>
               <br />
-              
             </p>
 
             <div className="flex justify-around gap-4">
-              <div
-                className="rounded text-white 
-                                            border-white border-solid border-2 py-2 px-4"
-              >
-                Nova Postagem
-              </div>
+              <ModalPlano />
             </div>
           </div>
 
@@ -41,6 +38,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <ListaPlanos1 />
     </>
   );
 }

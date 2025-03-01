@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormPlano() {
     const navigate = useNavigate();
@@ -52,7 +53,7 @@ function FormPlano() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado!");
+            ToastAlerta("Você precisa estar logado!", "info");
             navigate("/");
         }
     }, [token]);
@@ -93,18 +94,18 @@ function FormPlano() {
                 await atualizar(`/planos`, plano, setPlano, {
                     headers: { Authorization: token }
                 });
-                alert("O Plano foi atualizado com sucesso!");
+                ToastAlerta("O Plano foi atualizado com sucesso!", "sucesso");
             } else {
                 await cadastrar(`/planos`, plano, setPlano, {
                     headers: { Authorization: token }
                 });
-                alert("O Plano foi cadastrado com sucesso!");
+                ToastAlerta("O Plano foi cadastrado com sucesso!", "sucesso");
             }
         } catch (error: any) {
             if (error.toString().includes("403")) {
                 handleLogout();
             } else {
-                alert("Erro ao salvar o plano.");
+                ToastAlerta("Erro ao salvar o plano.", "erro");
             }
         }
 
