@@ -16,8 +16,13 @@ import ListaPlanos1 from "./components/planos/listaplanos/ListaPlanos1";
 import Perfil from "./pages/perfil/Perfil";
 import { ToastContainer } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Carro from "./pages/home/carro/Carro";
+
+import CarroPlanos from "./pages/home/carro/CarroPlanos";
+import FormPlanosCarro from "./pages/home/carro/FormPlanosCarro";
+import FormPlanosMoto from "./pages/home/moto/FormPlanosMoto";
+import Teste from "./pages/home/testes/Teste";
 
 function App() {
   return (
@@ -31,6 +36,9 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/carro" element={<Carro />} />
+              <Route path="/carroplanos" element={<CarroPlanos />} />
+              <Route path="/formplanoscarro" element={<FormPlanosCarro />} />
+              <Route path="/formplanosmoto" element={<FormPlanosMoto />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/planos" element={<ListaPlanos />} />
@@ -39,6 +47,7 @@ function App() {
               <Route path="/deletarplano/:id" element={<DeletarPlano />} />
               <Route path="/seguradoras" element={<ListaSeguradoras />} />
               <Route path="/cadastrarseguradora" element={<FormSeguradora />} />
+              <Route path="/teste" element={<Teste />} />
               <Route
                 path="/editarseguradora/:id"
                 element={<FormSeguradora />}
