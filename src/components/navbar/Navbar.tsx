@@ -16,35 +16,35 @@ function Navbar() {
 
   return (
     <>
-      <div
-        className="w-full bg-indigo-900 text-white
-                flex justify-center py-4"
-      >
+      <div className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-white flex justify-center py-4">
         <div className="container flex justify-between text-lg">
-          <Link to="/home" className="text-2xl font-bold">
+          <Link to="/home" className="text-2xl font-bold hover:scale-105">
             Segurize
           </Link>
 
           <div className="flex gap-4">
-            <Link to="/seguradoras" className="hover:underline">
+            <Link to="/seguradoras" className="font-bold hover:scale-105">
               Seguradoras
             </Link>
-            <Link to="/cadastrarseguradora" className="hover:underline">
+            <Link to="/cadastrarseguradora" className="font-bold hover:scale-105">
               Cadastrar Seguradora
             </Link>
-            <Link to="/planos" className="hover:underline">
+            <Link to="/planos" className="font-bold hover:scale-105">
               Planos
             </Link>
-            <Link to="/planos1" className="hover:underline">
+            <Link to="/planos1" className="font-bold hover:scale-105">
               Planos1
             </Link>
-            <Link to="/cadastrarplano" className="hover:underline">
+            <Link to="/cadastrarplano" className="font-bold hover:scale-105">
               Cadastrar Plano
             </Link>
-            <Link to="/perfil" className="hover:underline">
+            <Link to="/perfil" className="font-bold hover:scale-105">
               Perfil
             </Link>
-            <Link to="" onClick={logout} className="hover:underline">
+            <Link to="/login" className="font-bold hover:scale-105">
+              Login
+            </Link>
+            <Link to="" onClick={logout} className="font-bold hover:scale-105">
               Sair
             </Link>
           </div>
