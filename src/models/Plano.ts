@@ -13,5 +13,5 @@ export default interface Plano {
   franquia: string;
   status?: boolean;
   seguradora: Seguradora | null;
-  usuario?: Usuario | null;
+  usuario: Usuario | null;
 }

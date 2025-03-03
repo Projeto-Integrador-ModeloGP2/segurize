@@ -1,103 +1,229 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { RotatingLines } from "react-loader-spinner";
+import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthContext";
+import Plano from "../../../models/Plano";
+import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
-function Teste() {
-  const [marca, setMarca] = useState("");
-  const [modelo, setModelo] = useState("");
-  const [outroModelo, setOutroModelo] = useState("");
-  const [outroMarca, setOutroMarca] = useState("");
-  const [anoFabricacao, setAnoFabricacao] = useState(2025);
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [email, setEmail] = useState("");
-  const [dadosEnviados, setDadosEnviados] = useState(null);
+function FormPlano() {
+    const navigate = useNavigate();//
 
-  const marcas = [
-    { id: 1, nome: "Honda", modelos: ["CB 500", "CRF 250", "NXR 160", "CG 160"] },
-    { id: 2, nome: "Yamaha", modelos: ["Fazer 250", "MT-03", "R1", "XT 660"] },
-    { id: 3, nome: "Suzuki", modelos: ["GSX 750", "DL 1000 V-Strom", "Intruder 125", "Bandit 1200"] },
-    { id: 4, nome: "Kawasaki", modelos: ["Ninja 400", "Z900", "Versys 650", "Vulcan S"] },
-  ];
+    const { usuario, handleLogout } = useContext(AuthContext);//
+    const token = usuario.token;//
 
-  const modelosDisponiveis = marcas.find((m) => m.nome === marca)?.modelos || [];
+    const { id } = useParams<{ id: string }>();//
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setDadosEnviados({
-      nome,
-      cpf,
-      telefone,
-      email,
-      marca: marca === "outro" ? outroMarca : marca,
-      modelo: modelo === "outro" ? outroModelo : modelo,
-      anoFabricacao
-    });
-  };
+     const [plano, setPlano] = useState<Plano>({} as Plano);
 
-  return (
-    <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-        <div className="text-left text-white">
-          <h1 className="text-4xl mt-10 mb-10 font-bold">
-            <span className="text-blue-500">Segurize</span> Soluções em Seguros
-          </h1>
-          <p className="text-2xl mb-4">
-            Preencha os campos para proteger sua moto com os melhores planos.
-          </p>
+    const [seguradoras, setSeguradoras] = useState<any[]>([]); // Para preencher o dropdown
+    const [isLoading, setIsLoading] = useState<boolean>(false);//
+
+    async function buscarPorId(id: string) {
+        try {
+            await buscar(`/planos/${id}`, setPlano, {
+                headers: { Authorization: token }
+            });
+        } catch (error: any) {
+            if (error.toString().includes("403")) {
+                handleLogout();
+            }
+        }
+    }
+
+    async function carregarSeguradoras() {
+        try {
+            await buscar("/seguradoras", setSeguradoras, {
+                headers: { Authorization: token }
+            });
+        } catch (error) {
+            console.error("Erro ao buscar seguradoras", error);
+        }
+    }
+
+    useEffect(() => {
+        if (token === "") {
+            ToastAlerta("Você precisa estar logado!", "info");
+            navigate("/");
+        }
+    }, [token]);
+
+    useEffect(() => {
+        if (id !== undefined) {
+            buscarPorId(id);
+        }
+        carregarSeguradoras();
+    }, [id]);
+
+    function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+        const { name, value } = e.target;
+        setPlano((prevPlano) => {
+            if (name === 'seguradora') {
+                // Encontrar a seguradora selecionada na lista de seguradoras
+                const seguradoraSelecionada = seguradoras.find((seg) => seg.id === parseInt(value));
+                return { ...prevPlano, [name]: seguradoraSelecionada || null };
+            }
+            return { ...prevPlano, [name]: value };
+        });
+    }
+
+    function alternarStatus() {
+        setPlano({ ...plano, status: !plano.status });
+    }
+
+    function retornar() {
+        navigate("/planos");
+    }
+
+    async function gerarNovoPlano(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setIsLoading(true);
+
+        try {
+            if (id !== undefined) {
+                await atualizar(`/planos`, plano, setPlano, {
+                    headers: { Authorization: token }
+                });
+                ToastAlerta("O Plano foi atualizado com sucesso!", "sucesso");
+            } else {
+                await cadastrar(`/planos`, plano, setPlano, {
+                    headers: { Authorization: token }
+                });
+                ToastAlerta("O Plano foi cadastrado com sucesso!", "sucesso");
+            }
+        } catch (error: any) {
+            if (error.toString().includes("403")) {
+                handleLogout();
+            } else {
+                ToastAlerta("Erro ao salvar o plano.", "erro");
+            }
+        }
+
+        setIsLoading(false);
+        retornar();
+    }
+
+    return (
+        <div className="container flex flex-col items-center justify-center mx-auto">
+            <h1 className="text-4xl text-center my-8">
+                {id === undefined ? "Cadastrar Plano" : "Editar Plano"}
+            </h1>
+
+            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoPlano}>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="nome">Nome do Plano</label>
+                    <input
+                        type="text"
+                        placeholder="Digite o nome do plano"
+                        name="nome"
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={plano.nome}
+                        onChange={atualizarEstado}
+                        required
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="descricao">Descrição</label>
+                    <input
+                        type="text"
+                        placeholder="Descreva o plano"
+                        name="descricao"
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={plano.descricao}
+                        onChange={atualizarEstado}
+                        required
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="valor">Valor (R$)</label>
+                    <input
+                        type="text"
+                        placeholder="Digite o valor"
+                        name="valor"
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={plano.valor}
+                        onChange={atualizarEstado}
+                        required
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="vigencia">Vigência</label>
+                    <input
+                        type="text"
+                        placeholder="Informe a vigência"
+                        name="vigencia"
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={plano.vigencia}
+                        onChange={atualizarEstado}
+                        required
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="franquia">Franquia</label>
+                    <input
+                        type="text"
+                        placeholder="Digite a franquia"
+                        name="franquia"
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={plano.franquia}
+                        onChange={atualizarEstado}
+                        required
+                    />
+                </div>
+
+                {/* Switch de Status */}
+                <div className="flex items-center gap-2">
+                    <span>Status do Plano:</span>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                            type="checkbox"
+                            className="sr-only peer"
+                            checked={plano.status}
+                            onChange={alternarStatus} 
+                        />
+                        <div className="w-11 h-6 bg-gray-200 peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full 
+                        peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white 
+                        after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
+                    </label>
+                </div>
+
+                {/* Dropdown de Seguradora */}
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="seguradora">Seguradora</label>
+                    <select
+                        name="seguradora"
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={plano.seguradora ? plano.seguradora.id : ""}
+                        onChange={atualizarEstado}
+                        required
+                    >
+                        <option value="" disabled>Selecione uma seguradora</option>
+                        {seguradoras.map((seg) => (
+                            <option key={seg.id} value={seg.id}>{seg.nome}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <button
+                    className="rounded text-slate-100 bg-indigo-400 
+                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                    type="submit"
+                >
+                    {isLoading ? (
+                        <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} />
+                    ) : (
+                        <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
+                    )}
+                </button>
+            </form>
         </div>
-
-        {/* Formulário */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <input type="text" placeholder="Nome Completo" value={nome} onChange={(e) => setNome(e.target.value)} className="border p-2 rounded" required />
-          <input type="text" placeholder="CPF" value={cpf} onChange={(e) => setCpf(e.target.value)} className="border p-2 rounded" required />
-          <input type="text" placeholder="Telefone" value={telefone} onChange={(e) => setTelefone(e.target.value)} className="border p-2 rounded" required />
-          <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} className="border p-2 rounded" required />
-          
-          <select value={marca} onChange={(e) => setMarca(e.target.value)} className="border p-2 rounded">
-            <option value="">Selecione a Marca</option>
-            {marcas.map((marca) => (
-              <option key={marca.id} value={marca.nome}>{marca.nome}</option>
-            ))}
-            <option value="outro">Outro</option>
-          </select>
-          
-          {marca === "outro" && (
-            <input type="text" placeholder="Digite a marca" value={outroMarca} onChange={(e) => setOutroMarca(e.target.value)} className="border p-2 rounded" />
-          )}
-
-          <select value={modelo} onChange={(e) => setModelo(e.target.value)} className="border p-2 rounded">
-            <option value="">Selecione o Modelo</option>
-            {modelosDisponiveis.map((mod) => (
-              <option key={mod} value={mod}>{mod}</option>
-            ))}
-            <option value="outro">Outro</option>
-          </select>
-
-          {modelo === "outro" && (
-            <input type="text" placeholder="Digite o modelo" value={outroModelo} onChange={(e) => setOutroModelo(e.target.value)} className="border p-2 rounded" />
-          )}
-
-          <input type="number" placeholder="Ano de Fabricação" value={anoFabricacao} onChange={(e) => setAnoFabricacao(e.target.value)} min="1950" max="2025" className="border p-2 rounded" required />
-
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded">Enviar</button>
-        </form>
-
-        {/* Exibição dos dados enviados */}
-        {dadosEnviados && (
-          <div className="mt-4 bg-white p-4 rounded shadow-md">
-            <h2 className="text-lg font-bold mb-2">Dados Enviados:</h2>
-            <p><strong>Nome:</strong> {dadosEnviados.nome}</p>
-            <p><strong>CPF:</strong> {dadosEnviados.cpf}</p>
-            <p><strong>Telefone:</strong> {dadosEnviados.telefone}</p>
-            <p><strong>E-mail:</strong> {dadosEnviados.email}</p>
-            <p><strong>Marca:</strong> {dadosEnviados.marca}</p>
-            <p><strong>Modelo:</strong> {dadosEnviados.modelo}</p>
-            <p><strong>Ano de Fabricação:</strong> {dadosEnviados.anoFabricacao}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+    );
 }
 
-export default Teste;
+export default FormPlano;

@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Link, useNavigate } from "react-router-dom";
-import "./Login.css";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import UsuarioLogin from "../../models/UsuarioLogin";
@@ -37,7 +36,7 @@ function Login() {
     <>
       <div
         className="grid grid-cols-1 lg:grid-cols-2 
-                    h-screen place-items-center font-bold "
+                    h-screen place-items-center font-bold bg-gradient-to-r from-green-200 to-blue-300"
       >
         <form
           className="flex justify-center items-center flex-col w-1/2 gap-4"
@@ -74,8 +73,8 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="rounded bg-indigo-400 flex justify-center
-                                   hover:bg-indigo-900 text-white w-1/2 py-2"
+            className="rounded bg-blue-500 flex justify-center
+                                   hover:bg-blue-700 text-white w-1/2 py-2"
           >
             {isLoading ? (
               <RotatingLines
@@ -99,6 +98,14 @@ function Login() {
             </Link>
           </p>
         </form>
+        <div className="flex justify-center">
+          <img
+            src="veiculos/hb20.png"
+            alt="Imagem Página Home"
+            className="w-full scale-120 rounded-4xl"
+          />
+        </div>
+
         <div className="fundoLogin hidden lg:block"></div>
       </div>
     </>
