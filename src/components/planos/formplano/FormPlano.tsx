@@ -147,7 +147,7 @@ function FormPlano1() {
   const carregandoSeguradora = seguradora.nome === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto pt-30 items-center">
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Plano" : "Cadastrar Plano"}
       </h1>
@@ -161,7 +161,7 @@ function FormPlano1() {
             name="nome"
             className="border-2 border-slate-700 rounded p-2"
             value={plano.nome}
-            onChange={(e) => buscarSeguradoraPorId(e.currentTarget.value)}
+            onChange={atualizarEstado}
             required
           />
         </div>
@@ -174,7 +174,7 @@ function FormPlano1() {
             name="descricao"
             className="border-2 border-slate-700 rounded p-2"
             value={plano.descricao}
-            onChange={(e) => buscarSeguradoraPorId(e.currentTarget.value)}
+            onChange={atualizarEstado}
             required
           />
         </div>
@@ -187,7 +187,7 @@ function FormPlano1() {
             name="valor"
             className="border-2 border-slate-700 rounded p-2"
             value={plano.valor}
-            onChange={(e) => buscarSeguradoraPorId(e.currentTarget.value)}
+            onChange={atualizarEstado}
             required
           />
         </div>
@@ -200,7 +200,7 @@ function FormPlano1() {
             name="vigencia"
             className="border-2 border-slate-700 rounded p-2"
             value={plano.vigencia}
-            onChange={(e) => buscarSeguradoraPorId(e.currentTarget.value)}
+            onChange={atualizarEstado}
             required
           />
         </div>
@@ -213,27 +213,9 @@ function FormPlano1() {
             name="franquia"
             className="border-2 border-slate-700 rounded p-2"
             value={plano.franquia}
-            onChange={(e) => buscarSeguradoraPorId(e.currentTarget.value)}
+            onChange={atualizarEstado}
             required
           />
-        </div>
-
-        {/* Switch de Status */}
-        <div className="flex items-center gap-2">
-          <span>Status do Plano:</span>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              className="sr-only peer"
-              checked={plano.status}
-              onChange={alternarStatus}
-            />
-            <div
-              className="w-11 h-6 bg-gray-200 peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full 
-                        peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white 
-                        after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"
-            ></div>
-          </label>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -255,10 +237,37 @@ function FormPlano1() {
             ))}
           </select>
         </div>
+
+        {/* Switch de Status */}
+        <div className="flex items-center gap-2 mt-3">
+          <span>Status do Plano:</span>
+          <label className="inline-flex items-center cursor-pointer">
+            <span className={`mr-2 ${plano.status ? 'text-gray-500' : 'text-red-600'}`}>
+              Inativo
+            </span>
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={plano.status}
+              onChange={alternarStatus}
+            />
+            <div
+              className="relative w-11 h-6 bg-red-500 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300
+               peer-checked:bg-green-500
+               after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white
+               after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all
+               peer-checked:after:translate-x-full peer-checked:after:border-white"
+            ></div>
+            <span className={`ml-2 ${plano.status ? 'text-green-600' : 'text-gray-500'}`}>
+              Ativo
+            </span>
+          </label>
+        </div>
+
         <button
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
-                               text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
+          className="rounded  bg-cyan-400 hover:bg-cyan-800 
+                               text-white font-bold w-1/2 mx-auto py-2 mt-8 mb-15 flex justify-center"
           disabled={carregandoSeguradora}
         >
           {isLoading ? (
