@@ -34,9 +34,6 @@ function Navbar() {
           <Link to="/planos" className="font-bold hover:scale-105">
             Planos
           </Link>
-          <Link to="/planos1" className="font-bold hover:scale-105">
-            Planos1
-          </Link>
           <Link to="/cadastrarplano" className="font-bold hover:scale-105">
             Cadastrar Plano
           </Link>

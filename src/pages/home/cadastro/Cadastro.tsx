@@ -69,11 +69,18 @@ function Cadastro() {
 
   return (
     <>
-      <div
-        className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400 pt-30"
-      >
-        <div className="fundoCadastro hidden lg:block"></div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400">
+        <div className=" hidden lg:block">
+          <h1 className="text-5xl font-bold mb-30 text-center">
+            <span className="text-blue-600 ">Segurize</span> Soluções em Seguros
+          </h1>
+          <img
+            src="public/veiculos/carromoto.avif"
+            alt="Imagem Creta"
+            className="w-full cursor-pointer scale-120"
+          />
+        </div>
+
         <form
           className="flex justify-center items-center flex-col w-2/3 gap-3"
           onSubmit={cadastrarNovoUsuario}
@@ -85,7 +92,7 @@ function Cadastro() {
               type="text"
               id="nome"
               name="nome"
-              placeholder="Nome"
+              placeholder="Digite seu nome"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -99,7 +106,7 @@ function Cadastro() {
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
+              placeholder="usuario@gmail.com"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -113,7 +120,7 @@ function Cadastro() {
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
+              placeholder="Opcional"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -160,8 +167,8 @@ function Cadastro() {
             </button>
             <button
               type="submit"
-              className="rounded text-white bg-blue-500 
-                           hover:bg-blue-700 w-1/2 py-2
+              className="rounded text-white bg-green-400 
+                           hover:bg-green-700 w-1/2 py-2
                            flex justify-center"
             >
               {isLoading ? (

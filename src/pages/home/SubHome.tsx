@@ -56,7 +56,7 @@ function SubHome() {
               <img
                 src="public/veiculos/creta.png"
                 alt="Imagem Creta"
-                className="w-full cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="w-full cursor-pointer hover:scale-120 transition-transform duration-300"
               />
             </Link>
           </div>

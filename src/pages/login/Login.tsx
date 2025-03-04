@@ -73,8 +73,8 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="rounded bg-blue-500 flex justify-center
-                                   hover:bg-blue-700 text-white w-1/2 py-2"
+            className="rounded bg-blue-600 flex justify-center
+                                   hover:bg-blue-800 text-white w-1/2 py-2"
           >
             {isLoading ? (
               <RotatingLines
@@ -98,11 +98,14 @@ function Login() {
             </Link>
           </p>
         </form>
-        <div className="flex justify-center">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-5xl font-bold mb-6 text-center">
+            <span className="text-green-600 ">Segurize</span> Soluções em Seguros
+          </h1>
           <img
-            src="veiculos/hb20.png"
+            src="veiculos/urus.png"
             alt="Imagem Página Home"
-            className="w-full scale-120 rounded-4xl"
+            className="w-full scale-90 rounded-4xl"
           />
         </div>
 
