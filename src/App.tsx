@@ -17,12 +17,12 @@ import Perfil from "./pages/perfil/Perfil";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import Carro from "./pages/home/carro/Carro";
-
-import CarroPlanos from "./pages/home/carro/CarroPlanos";
-import FormPlanosCarro from "./pages/home/carro/FormPlanosCarro";
 import FormPlanosMoto from "./pages/home/moto/FormPlanosMoto";
-import Teste from "./pages/home/testes/Teste";
+import FormPlanosCarro from "./pages/home/carro/FormPlanosCarro";
+import CarroPlanos from "./pages/home/carro/CarroPlanos";
+import SubHome from "./pages/home/carro/SubHome";
+
+
 
 function App() {
   return (
@@ -33,9 +33,9 @@ function App() {
           <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<SubHome />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/carro" element={<Carro />} />
+              <Route path="/subhome" element={<SubHome />} />
               <Route path="/carroplanos" element={<CarroPlanos />} />
               <Route path="/formplanoscarro" element={<FormPlanosCarro />} />
               <Route path="/formplanosmoto" element={<FormPlanosMoto />} />
@@ -47,15 +47,8 @@ function App() {
               <Route path="/deletarplano/:id" element={<DeletarPlano />} />
               <Route path="/seguradoras" element={<ListaSeguradoras />} />
               <Route path="/cadastrarseguradora" element={<FormSeguradora />} />
-              <Route path="/teste" element={<Teste />} />
-              <Route
-                path="/editarseguradora/:id"
-                element={<FormSeguradora />}
-              />
-              <Route
-                path="/deletarseguradora/:id"
-                element={<DeletarSeguradora />}
-              />
+              <Route path="/editarseguradora/:id" element={<FormSeguradora />} />
+              <Route path="/deletarseguradora/:id" element={<DeletarSeguradora />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/planos1" element={<ListaPlanos1 />} />
             </Routes>

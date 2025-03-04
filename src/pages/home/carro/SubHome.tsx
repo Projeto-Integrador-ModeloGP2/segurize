@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Carro() {
+function SubHome() {
   return (
     <>
       <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center">
@@ -31,7 +31,7 @@ function Carro() {
 
           <div className="flex justify-center">
             <img
-              src="public/capa.jpg"
+              src="pessoas/capa.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl"
             />
@@ -84,7 +84,7 @@ function Carro() {
         <div className="container grid grid-cols-2 items-center text-white gap-8 p-8">
           <div className="flex justify-center">
             <img
-              src="public/capa2.jpg"
+              src="pessoas/capa2.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl"
             />
@@ -183,7 +183,7 @@ function Carro() {
 
           <div className="flex justify-center">
             <img
-              src="public/capa1.jpg"
+              src="pessoas/capa1.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl"
             />
@@ -213,4 +213,4 @@ function Carro() {
   );
 }
 
-export default Carro;
+export default SubHome;
