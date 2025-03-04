@@ -20,7 +20,8 @@ import "react-toastify/dist/ReactToastify.css";
 import FormPlanosMoto from "./pages/home/moto/FormPlanosMoto";
 import FormPlanosCarro from "./pages/home/carro/FormPlanosCarro";
 import CarroPlanos from "./pages/home/carro/CarroPlanos";
-import SubHome from "./pages/home/carro/SubHome";
+import SubHome from "./pages/home/SubHome";
+import NavbarHome from "./components/navbar/NavbarHome";
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <ToastContainer />
         <BrowserRouter>
           <Navbar />
+          <NavbarHome />
           <div className="min-h-[80vh]">
             <Routes>
               <Route path="/" element={<SubHome />} />

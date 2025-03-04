@@ -6,7 +6,7 @@ function SubHome() {
       <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center">
         {/* 1° Bloco */}
 
-        <div className="container grid grid-cols-2 items-center text-white gap-8 p-1">
+        <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
           <div className="text-left">
             <h1 className="text-4xl font-bold mb-6">
               <span className="text-blue-500">Segurize</span> Soluções em
@@ -40,7 +40,7 @@ function SubHome() {
 
         {/* 2° Bloco - Veículos */}
 
-        <div className="container grid grid-cols-2 items-center text-white gap-8 p-1">
+        <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
           <div className="flex justify-center">
             <Link to="/formplanoscarro">
               <img
@@ -63,7 +63,7 @@ function SubHome() {
         </div>
         {/* 3° Bloco - Parceiros */}
 
-        <div className="text-white text-center p-8">
+        <div className="text-black text-center p-8">
           <h2 className="text-4xl font-bold mb-8">
             Confira os nossos parceiros
           </h2>
@@ -81,7 +81,7 @@ function SubHome() {
         </div>
         {/* 4° Bloco  */}
 
-        <div className="container grid grid-cols-2 items-center text-white gap-8 p-8">
+        <div className="container grid grid-cols-2 items-center text-black gap-8 p-8">
           <div className="flex justify-center">
             <img
               src="pessoas/capa2.jpg"
@@ -93,7 +93,7 @@ function SubHome() {
           <div className="text-left">
             <h2 className="text-4xl font-bold mb-6">
               Por que escolher a{" "}
-              <span className="text-green-300">Segurize</span>?
+              <span className="text-green-400">Segurize</span>?
             </h2>
 
             <p className="text-2xl mb-4">
@@ -118,7 +118,7 @@ function SubHome() {
         </div>
         {/* bloco 5 */}
 
-        <div className="container grid grid-cols-2 items-center text-white gap-8 p-8">
+        <div className="container grid grid-cols-2 items-center text-black gap-8 p-8">
           <div className="text-left">
             <h2 className="text-4xl font-bold mb-6">
               <span className="text-blue-500">Seguros</span> com tecnologia,
@@ -191,7 +191,7 @@ function SubHome() {
         </div>
         {/* nosso contato */}
 
-        <div className="container text-white text-center m-10">
+        <div className="container text-black text-center m-10">
           <h2 className="text-4xl font-bold mb-6">Fale Conosco</h2>
           <p className="text-2xl mb-4">
             Nossos principais contatos estão aqui:

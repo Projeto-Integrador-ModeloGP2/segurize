@@ -5,8 +5,7 @@ import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
   const navigate = useNavigate();
-
-  const { handleLogout } = useContext(AuthContext);
+  const { usuario, handleLogout } = useContext(AuthContext);
 
   function logout() {
     handleLogout();
@@ -14,43 +13,42 @@ function Navbar() {
     navigate("/");
   }
 
-  return (
-    <>
-      <div className="w-full bg-gradient-to-r from-green-300 to-blue-400 text-white flex justify-center py-4">
-        <div className="container flex justify-between text-lg">
-          <Link to="/home" className="text-2xl font-bold hover:scale-105">
-            Segurize
-          </Link>
+  if (!usuario?.token) {
+    return null; // Se o usuário não estiver logado, não renderiza a Navbar
+  }
 
-          <div className="flex gap-4">
-            <Link to="/seguradoras" className="font-bold hover:scale-105">
-              Seguradoras
-            </Link>
-            <Link to="/cadastrarseguradora" className="font-bold hover:scale-105">
-              Cadastrar Seguradora
-            </Link>
-            <Link to="/planos" className="font-bold hover:scale-105">
-              Planos
-            </Link>
-            <Link to="/planos1" className="font-bold hover:scale-105">
-              Planos1
-            </Link>
-            <Link to="/cadastrarplano" className="font-bold hover:scale-105">
-              Cadastrar Plano
-            </Link>
-            <Link to="/perfil" className="font-bold hover:scale-105">
-              Perfil
-            </Link>
-            <Link to="/login" className="font-bold hover:scale-105">
-              Login
-            </Link>
-            <Link to="" onClick={logout} className="font-bold hover:scale-105">
-              Sair
-            </Link>
-          </div>
+  return (
+    <div className="w-full bg-gradient-to-r from-green-300 to-blue-400 text-white flex justify-center py-4">
+      <div className="container flex justify-between text-lg">
+        <Link to="/home" className="text-2xl font-bold hover:scale-105">
+          Segurize
+        </Link>
+
+        <div className="flex gap-4">
+          <Link to="/seguradoras" className="font-bold hover:scale-105">
+            Seguradoras
+          </Link>
+          <Link to="/cadastrarseguradora" className="font-bold hover:scale-105">
+            Cadastrar Seguradora
+          </Link>
+          <Link to="/planos" className="font-bold hover:scale-105">
+            Planos
+          </Link>
+          <Link to="/planos1" className="font-bold hover:scale-105">
+            Planos1
+          </Link>
+          <Link to="/cadastrarplano" className="font-bold hover:scale-105">
+            Cadastrar Plano
+          </Link>
+          <Link to="/perfil" className="font-bold hover:scale-105">
+            Perfil
+          </Link>
+          <Link to="" onClick={logout} className="font-bold hover:scale-105">
+            Sair
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
