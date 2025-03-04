@@ -25,6 +25,7 @@ import NavbarHome from "./components/navbar/NavbarHome";
 
 
 import SeguradoraPages from "./pages/seguradoras/SeguradorasPage";
+import Teste from "./components/planos/teste/teste";
 
 
 function App() {
@@ -50,17 +51,13 @@ function App() {
               <Route path="/deletarplano/:id" element={<DeletarPlano />} />
               <Route path="/cadastrarseguradora" element={<FormSeguradora />} />
               <Route path="/seguradoras" element={<SeguradoraPages />} />
-              <Route
-                path="/editarseguradora/:id"
-                element={<FormSeguradora />}
-              />
-              <Route
-                path="/deletarseguradora/:id"
-                element={<DeletarSeguradora />}
-              />
+              <Route path="/editarseguradora/:id"element={<FormSeguradora />}/>
+              <Route path="/deletarseguradora/:id"element={<DeletarSeguradora />}/>
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/planos" element={<ListaPlanos1 />} />
               <Route path="/sobrenos" element={<CardSobreNos />} />
+              <Route path="/carro" element={<Carro />} />
+              <Route path="/teste" element={<Teste />} />
             </Routes>
           </div>
           <Footer />

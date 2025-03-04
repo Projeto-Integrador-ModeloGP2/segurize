@@ -18,7 +18,7 @@ function Navbar() {
   }
 
   return (
-    <div className="w-full bg-gradient-to-r from-green-300 to-blue-400 text-white flex justify-center py-4">
+    <div className="w-full bg-gradient-to-r from-green-300 to-blue-400 text-black flex justify-center py-4">
       <div className="container flex justify-between text-lg">
         <Link to="/home" className="text-2xl font-bold hover:scale-105">
           Segurize
@@ -40,12 +40,17 @@ function Navbar() {
           <Link to="/cadastrarplano" className="font-bold hover:scale-105">
             Cadastrar Plano
           </Link>
+          <Link to="/sobrenos" className="font-bold hover:scale-105">
+            Sobre Nós
+          </Link>
+          
           <Link to="/perfil" className="font-bold hover:scale-105">
             Perfil
           </Link>
           <Link to="" onClick={logout} className="font-bold hover:scale-105">
             Sair
           </Link>
+          
         </div>
       </div>
     </div>
