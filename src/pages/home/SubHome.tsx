@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SubHome() {
   return (
     <>
-      <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center">
+      <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center pt-30">
         {/* 1° Bloco */}
 
         <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
@@ -29,14 +29,15 @@ function SubHome() {
             </p>
 
             <p className="font-bold">
-            Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline font-bold">
-              Cadastre-se
-            </Link>
-          </p>
+              Ainda não tem uma conta?{" "}
+              <Link
+                to="/cadastro"
+                className="text-indigo-800 hover:underline font-bold"
+              >
+                Cadastre-se
+              </Link>
+            </p>
           </div>
-
-          
 
           <div className="flex justify-center">
             <img
@@ -92,7 +93,7 @@ function SubHome() {
 
         <div className="container grid grid-cols-2 items-center text-black gap-8 p-8">
           <div className="flex justify-center">
-          <img
+            <img
               src="pessoas/capa2.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl rotate-z-358 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
@@ -191,7 +192,7 @@ function SubHome() {
           </div>
 
           <div className="flex justify-center">
-          <img
+            <img
               src="/pessoas/capa1.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl rotate-z-2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"

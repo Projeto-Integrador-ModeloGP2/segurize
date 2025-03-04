@@ -4,7 +4,7 @@ import ModalPlano from "../../components/planos/modalplanos/ModalPlanos";
 function Home() {
   return (
     <>
-      <div className="bg-indigo-900 flex justify-center">
+      <div className="bg-indigo-900 flex justify-center pt-30">
         <div className="container grid grid-cols-2 text-white">
           <div className="flex flex-col gap-4 items-center justify-center py-4">
             <h2 className="text-4xl font-bold flex-1/6">
@@ -30,11 +30,7 @@ function Home() {
           </div>
 
           <div className="flex justify-center ">
-            <img
-              src="/carro.png"
-              alt="Imagem Página Home"
-              className="w-full"
-            />
+            <img src="/carro.png" alt="Imagem Página Home" className="w-full" />
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ function Perfil() {
   }, [usuario.token]);
 
   return (
-    <div className="flex justify-center mx-4">
+    <div className="flex justify-center mx-4 pt-30 pb-30">
       <div className="container mx-auto my-4 rounded-2xl overflow-hidden">
         <img
           className="w-full h-72 object-cover border-b-8 border-white"
@@ -33,8 +33,7 @@ function Perfil() {
           alt={`Foto de perfil de ${usuario.nome}`}
         />
 
-        <div
-          className="relative mt-[-4rem] h-72 flex flex-col bg-sky-500 text-white text-2xl items-center justify-center">
+        <div className="relative mt-[-4rem] h-72 flex flex-col bg-sky-500 text-white text-2xl items-center justify-center">
           <p>Nome: {usuario.nome} </p>
           <p>Email: {usuario.usuario}</p>
           {/* Verificando se o usuário tem plano vinculado */}
