@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Seguradora from "../../../models/Seguradora";
 import CardPlanos from '../../planos/cardplanos/CardPlanos';
-import Plano from '../../../models/Plano';
 
 interface CardSeguradoraProps {
   seguradora: Seguradora;
@@ -50,12 +49,11 @@ function CardSeguradoras({ seguradora }: CardSeguradoraProps) {
         {isOpen && (
           <div className="p-4 text-gray-700">
             {/* Adicione aqui as informações adicionais que deseja mostrar ao expandir o card */}
-            <p><strong>Planos:</strong></p>
+            <p><strong>Planos:</strong>
             {
-             seguradora.plano?.map((plano)) => {
-              return <CardPlanos key={"card- " + plano.id} plano={plano}}/>
-             }
+              seguradora.plano?.map((plano) => <CardPlanos key={"card-" + plano.id} plano={plano}/>)
             }
+            </p>
 
             {/* Outros detalhes */}
           </div>
