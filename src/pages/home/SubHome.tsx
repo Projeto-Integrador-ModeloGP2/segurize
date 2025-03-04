@@ -31,9 +31,9 @@ function SubHome() {
 
           <div className="flex justify-center">
             <img
-              src="pessoas/capa.jpg"
+              src="/pessoas/capa.jpg"
               alt="Imagem Página Home"
-              className="w-full scale-80 rounded-4xl"
+              className="w-full scale-80 rounded-4xl rotate-z-2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
             />
           </div>
         </div>
@@ -83,17 +83,17 @@ function SubHome() {
 
         <div className="container grid grid-cols-2 items-center text-black gap-8 p-8">
           <div className="flex justify-center">
-            <img
+          <img
               src="pessoas/capa2.jpg"
               alt="Imagem Página Home"
-              className="w-full scale-80 rounded-4xl"
+              className="w-full scale-80 rounded-4xl rotate-z-358 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
             />
           </div>
 
           <div className="text-left">
             <h2 className="text-4xl font-bold mb-6">
               Por que escolher a{" "}
-              <span className="text-green-400">Segurize</span>?
+              <span className="text-green-600">Segurize</span>?
             </h2>
 
             <p className="text-2xl mb-4">
@@ -182,10 +182,10 @@ function SubHome() {
           </div>
 
           <div className="flex justify-center">
-            <img
-              src="pessoas/capa1.jpg"
+          <img
+              src="/pessoas/capa1.jpg"
               alt="Imagem Página Home"
-              className="w-full scale-80 rounded-4xl"
+              className="w-full scale-80 rounded-4xl rotate-z-2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
             />
           </div>
         </div>

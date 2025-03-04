@@ -10,7 +10,7 @@ function Navbar() {
   }
 
   return (
-    <div className="w-full bg-gradient-to-r from-green-300 to-blue-400 text-white flex justify-center py-4">
+    <div className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-black flex justify-center py-4">
       <div className="container flex justify-between text-lg">
         <Link to="/subhome" className="text-2xl font-bold hover:scale-105 text-blue-500">
           Segurize
