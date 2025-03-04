@@ -31,7 +31,7 @@ function Home() {
 
           <div className="flex justify-center ">
             <img
-              src="public/carro.png"
+              src="/carro.png"
               alt="Imagem Página Home"
               className="w-full"
             />
