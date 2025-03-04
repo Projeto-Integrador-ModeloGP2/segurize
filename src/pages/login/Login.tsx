@@ -36,7 +36,7 @@ function Login() {
     <>
       <div
         className="grid grid-cols-1 lg:grid-cols-2 
-                    h-screen place-items-center font-bold bg-gradient-to-r from-green-200 to-blue-300"
+                    h-screen place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400"
       >
         <form
           className="flex justify-center items-center flex-col w-1/2 gap-4"

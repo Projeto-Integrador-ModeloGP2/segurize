@@ -30,7 +30,7 @@ function Cadastro() {
   }, [usuario])
 
   function retornar(){
-    navigate('/login')
+    navigate('/subhome')
   }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
@@ -71,7 +71,7 @@ function Cadastro() {
     <>
     
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold bg-gradient-to-r from-green-200 to-blue-300">
+            place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400">
         <div className="fundoCadastro hidden lg:block"></div>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' 
           onSubmit={cadastrarNovoUsuario}>

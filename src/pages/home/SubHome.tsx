@@ -27,7 +27,16 @@ function SubHome() {
               Escolha abaixo entre carro ou moto e clique na imagem para
               conferir os planos disponíveis.
             </p>
+
+            <p className="font-bold">
+            Ainda não tem uma conta?{" "}
+            <Link to="/cadastro" className="text-indigo-800 hover:underline font-bold">
+              Cadastre-se
+            </Link>
+          </p>
           </div>
+
+          
 
           <div className="flex justify-center">
             <img
