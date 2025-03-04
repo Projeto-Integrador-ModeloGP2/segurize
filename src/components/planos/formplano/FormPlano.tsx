@@ -147,7 +147,7 @@ function FormPlano() {
   const carregandoSeguradora = seguradora.nome === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto pt-30 items-center">
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Plano" : "Cadastrar Plano"}
       </h1>
