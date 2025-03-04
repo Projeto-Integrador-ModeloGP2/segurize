@@ -1,36 +1,47 @@
 import { Link } from "react-router-dom";
 import Seguradora from "../../../models/Seguradora";
 
-interface CardSeguradorasProps {
+interface CardSeguradoraProps {
   seguradora: Seguradora;
 }
 
-function CardSeguradoras({ seguradora }: CardSeguradorasProps) {
+function CardSeguradoras({ seguradora }: CardSeguradoraProps) {
   return (
-    <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-      <header className="py-2 px-6 bg-indigo-800 text-white font-bold text-2xl text-center">
-        {seguradora.nome}
-      </header>
-      <p className="p-8 text-3xl bg-slate-200 h-full">
-        {seguradora.especialidade}
-      </p>
+    <div className="">
+      <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
+        <header className="py-2 px-6 bg-gradient-to-r from-green-300 to-blue-400 text-white font-bold text-2xl text-center">
+          <h1>Seguradora {seguradora.nome}</h1>
+        </header>
 
-      <div className="flex">
-        <Link
-          to={`/editarseguradora/${seguradora.id}`}
-          className="w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
-    flex items-center justify-center py-2"
-        >
-          <button>Editar</button>
-        </Link>
+        <p className="p-2 text-1xl bg-white h-full">
+          <strong>Especialidade:</strong> {seguradora.especialidade}
+        </p>
 
-        <Link
-          to={`/deletarseguradora/${seguradora.id}`}
-          className="text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-		flex items-center justify-center"
-        >
-          <button>Deletar</button>
-        </Link>
+        <div className="flex items-end justify-end m-2">
+          <Link
+            to={`/editarseguradora/${seguradora.id}`}
+            className="w-10 h-10 rounded-full bg-cyan-400 hover:bg-cyan-800  
+          flex items-center justify-center py-2 m-1"
+          >
+            <button>
+              <div className="w-5 h-5">
+                <img src="/icons/editar.png" alt="editar" />
+              </div>
+            </button>
+          </Link>
+
+          <Link
+            to={`/deletarseguradora/${seguradora.id}`}
+            className="w-10 h-10 rounded-full bg-red-400 hover:bg-red-700
+		flex items-center justify-center m-1"
+          >
+            <button>
+              <div className="w-5 h-5">
+                <img src="/icons/deletar.png" alt="deletar" />
+              </div>
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

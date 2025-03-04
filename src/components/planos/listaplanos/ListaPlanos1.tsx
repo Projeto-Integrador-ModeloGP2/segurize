@@ -7,7 +7,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
-import CardPlano1 from "../cardplanos/CardPlanos1";
+import CardPlano1 from "../cardplanos/CardPlanos";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaPlanos1() {

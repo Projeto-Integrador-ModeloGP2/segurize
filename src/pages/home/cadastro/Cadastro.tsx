@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './Cadastro.css'
 import { RotatingLines } from 'react-loader-spinner'
 import Usuario from '../../../models/Usuario'
 import { cadastrarUsuario } from '../../../services/Service'
@@ -70,12 +69,13 @@ function Cadastro() {
   
   return (
     <>
+    
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold">
+            place-items-center font-bold bg-gradient-to-r from-green-200 to-blue-300">
         <div className="fundoCadastro hidden lg:block"></div>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' 
           onSubmit={cadastrarNovoUsuario}>
-          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+          <h2 className='text-white-900 text-5xl'>Cadastrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
@@ -139,7 +139,7 @@ function Cadastro() {
           <div className="flex justify-around w-full gap-8">
 			<button 
                 type='reset'
-                className='rounded text-white bg-red-400 
+                className='rounded text-white bg-red-500 
                 hover:bg-red-700 w-1/2 py-2' 
                 onClick={retornar}
 			>
@@ -147,8 +147,8 @@ function Cadastro() {
             </button>
             <button 
                 type='submit'
-                className='rounded text-white bg-indigo-400 
-                           hover:bg-indigo-900 w-1/2 py-2
+                className='rounded text-white bg-blue-500 
+                           hover:bg-blue-700 w-1/2 py-2
                            flex justify-center' 
                 >
                   {isLoading ? <RotatingLines
@@ -164,7 +164,9 @@ function Cadastro() {
             </button>
           </div>
         </form>
+        
       </div>
+      
     </>
   )
 }
