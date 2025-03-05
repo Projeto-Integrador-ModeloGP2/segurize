@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { useState } from "react";
-=======
-import React, { useState } from "react";
->>>>>>> Clara
 import { Link } from "react-router-dom";
 import Seguradora from "../../../models/Seguradora";
 import CardPlanos from "../../planos/cardplanos/CardPlanos";
