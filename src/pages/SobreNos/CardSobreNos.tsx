@@ -45,7 +45,7 @@ const alunosArr: Alunos[] = [
 
 function CardSobreNos() {
   return (
-    <div className="flex flex-wrap gap-4 justify-center pt-30">
+    <div className="flex flex-wrap gap-4 justify-center pt-30 bg-[#E3F2FD]">
       {alunosArr.map(({ name, frase, email, github, linkedin, foto }) => {
         return (
           <Card

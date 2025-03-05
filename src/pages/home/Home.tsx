@@ -4,8 +4,8 @@ import ModalPlano from "../../components/planos/modalplanos/ModalPlanos";
 function Home() {
   return (
     <>
-      <div className="bg-indigo-900 flex justify-center pt-30">
-        <div className="container grid grid-cols-2 text-white">
+      <div className="bg-[url('/image8.png')] bg-cover bg-center flex justify-center pt-30">
+        <div className="container grid grid-cols-2 text-[#E2E8F0]">
           <div className="flex flex-col gap-4 items-center justify-center py-4">
             <h2 className="text-4xl font-bold flex-1/6">
               A melhor proteção veicular do Brasil

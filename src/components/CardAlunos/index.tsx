@@ -13,7 +13,8 @@ export default function Card({
   return (
     <div
       className="border-slate-900 border flex flex-col rounded-2xl
-    overflow-hidden justify-between w-80 m-10 bg-gradient-to-r from-green-200 to-blue-300 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+    overflow-hidden justify-between w-80 m-10 bg-gradient-to-r from-green-200 to-blue-300 drop-shadow-[0_10px_25px_rgba(0,0,0,0.3)]
+"
     >
       <div>
         <div className="flex w-full py-2 px-4 items-center gap-4 justify-center">

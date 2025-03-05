@@ -16,13 +16,19 @@ function Navbar() {
           to="/subhome"
           className="text-2xl font-bold hover:scale-105 text-blue-500"
         >
-          Segurize
+          <img src="/logo2.svg" alt="Segurize" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
-          <Link to="/planos" className="font-bold hover:scale-105">
+          <Link
+            to="/planos"
+            className="font-bold hover:scale-105 text-[#1A1A1A]"
+          >
             Planos
           </Link>
-          <Link to="/login" className="font-bold hover:scale-105">
+          <Link
+            to="/login"
+            className="font-bold hover:scale-105 text-[#333333]"
+          >
             Login
           </Link>
         </div>

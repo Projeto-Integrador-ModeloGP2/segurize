@@ -8,7 +8,7 @@ interface CardPlanoProps {
 function CardPlanos({ plano }: CardPlanoProps) {
   return (
     <div
-      className="border-slate-900 border 
+      className="mt-30 border-slate-900 border 
             flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2 mt-10 "
     >
       <div>

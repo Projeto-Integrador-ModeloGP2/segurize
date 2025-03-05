@@ -10,7 +10,7 @@ function Footer() {
 
   return (
     <>
-      <div className="flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-black">
+      <div className="flex justify-center bg-gradient-to-r from-green-400 to-blue-500 text-[#0A0A3C]">
         <div className="container flex flex-col items-center py-4">
           <p className="text-xl font-bold">
             Segurize Soluções em Seguros | Copyright: {data}

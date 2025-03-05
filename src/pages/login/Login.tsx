@@ -42,7 +42,7 @@ function Login() {
           className="flex justify-center items-center flex-col w-1/2 gap-4"
           onSubmit={login}
         >
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+          <h2 className="text-[#0A0A3C] text-5xl ">Entrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="usuario">Usuário</label>
             <input
@@ -50,7 +50,7 @@ function Login() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              className="border-2 border-[#314158] rounded p-2"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -64,7 +64,7 @@ function Login() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="border-2 border-[#314158] rounded p-2"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -89,7 +89,7 @@ function Login() {
             )}
           </button>
 
-          <hr className="border-slate-800 w-full" />
+          <hr className="border-[#314158] w-full" />
 
           <p>
             Ainda não tem uma conta?{" "}
@@ -99,8 +99,9 @@ function Login() {
           </p>
         </form>
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold mb-6 text-center">
-            <span className="text-green-600 ">Segurize</span> Soluções em Seguros
+          <h1 className="text-5xl font-bold mb-6 text-center text-[#0A0A3C]">
+            <span className="text-green-600 ">Segurize</span> Soluções em
+            Seguros
           </h1>
           <img
             src="veiculos/urus.png"
