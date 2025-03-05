@@ -15,8 +15,8 @@ function SubHome() {
             <h3 className="text-4xl font-bold mb-6">
               A melhor proteção veicular do Brasil
             </h3>
-            <p className="text-2xl text-[#1E293B] mb-4">
-              Bem-vindo à <strong className="text-blue-500">Segurize</strong>,
+            <p className="text-2xl mb-4">
+              Bem-vindo à <strong className="text-blue-800">Segurize</strong>,
               sua especialista em proteção veicular.
             </p>
             <p className="text-2xl text-[#1E293B] mb-4">
