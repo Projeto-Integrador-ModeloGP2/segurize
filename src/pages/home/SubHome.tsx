@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SubHome() {
   return (
     <>
-      <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center pt-30">
+      <div className="bg-[#DFEAFE]  flex flex-col items-center pt-30">
         {/* 1° Bloco */}
 
         <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-1">

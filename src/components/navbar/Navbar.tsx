@@ -18,7 +18,7 @@ function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white/5 backdrop-blur-[2px] text-black flex justify-center py-4 shadow-lg z-50 border border-white/10">
+    <div className="fixed top-0 left-0 w-full bg-[#00003C]/30 backdrop-blur-md text-white flex justify-center py-4 shadow-lg z-50 border border-white/10">
       <div className="container flex justify-between text-lg">
         <Link to="/home" className="text-2xl font-bold hover:scale-105">
           <img src="/logo3.svg" alt="Segurize" className="h-10 w-auto" />
