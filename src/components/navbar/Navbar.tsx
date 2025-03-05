@@ -46,15 +46,19 @@ function Navbar() {
               </Link>
             </>
           )}
-          <Link to="/planos" className="font-bold hover:scale-105">
-            Planos
-          </Link>
+          {usuario.usuario !== "messi@messi.com" && (
+            <Link to="/planos" className="font-bold hover:scale-105">
+              Planos
+            </Link>
+          )}
           <Link to="/perfil" className="font-bold hover:scale-105">
             Perfil
           </Link>
-          <Link to="/sobrenos" className="font-bold hover:scale-105">
-            Sobre Nós
-          </Link>
+          {usuario.usuario !== "messi@messi.com" && (
+            <Link to="/sobrenos" className="font-bold hover:scale-105">
+              Sobre Nós
+            </Link>
+          )}
           <Link to="" onClick={logout} className="font-bold hover:scale-105">
             Sair
           </Link>

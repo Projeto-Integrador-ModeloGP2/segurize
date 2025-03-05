@@ -10,13 +10,13 @@ function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-[#0A0A2A] text-white flex justify-center py-4 shadow-lg z-50 border border-white/10">
+    <div className="w-full bg-[#00003C] text-white flex justify-center py-4 shadow-lg ">
       <div className="container flex justify-between text-lg">
         <Link
           to="/subhome"
           className="text-2xl font-bold hover:scale-105 text-blue-800"
         >
-          <img src="/logo2.svg" alt="Segurize" className="h-10 w-auto" />
+          <img src="/logo4.svg" alt="Segurize" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
           <Link to="/login" className="font-bold hover:scale-105">
