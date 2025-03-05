@@ -1,4 +1,3 @@
-import ListaPlanos1 from "../../components/planos/listaplanos/ListaPlanos";
 import ModalPlano from "../../components/planos/modalplanos/ModalPlanos";
 
 function Home() {
@@ -34,7 +33,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <ListaPlanos1 />
+
     </>
   );
 }

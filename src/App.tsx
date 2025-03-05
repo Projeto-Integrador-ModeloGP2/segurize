@@ -24,7 +24,9 @@ import NavbarHome from "./components/navbar/NavbarHome";
 
 import SeguradoraPages from "./pages/seguradoras/SeguradorasPage";
 import Teste from "./teste/teste/teste";
-import ListaPlanos from "./components/planos/listaplanos/ListaPlanos";
+import ListaPlanosAdm from "./components/planos/listaplanos/ListaPlanosAdm";
+import ListaPlanosUsuario from "./components/planos/listaplanos/ListaPlanosUsuario";
+
 
 
 function App() {
@@ -59,9 +61,10 @@ function App() {
                 element={<DeletarSeguradora />}
               />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/planos" element={<ListaPlanos />} />
+              <Route path="/planosadm" element={<ListaPlanosAdm />} />
               <Route path="/sobrenos" element={<CardSobreNos />} />
               <Route path="/teste" element={<Teste />} />
+              <Route path="/planos" element={<ListaPlanosUsuario />} />
             </Routes>
           </div>
           <Footer />

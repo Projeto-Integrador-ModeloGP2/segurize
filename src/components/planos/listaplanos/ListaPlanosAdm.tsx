@@ -10,7 +10,7 @@ import { DNA } from "react-loader-spinner";
 import CardPlano1 from "../cardplanos/CardPlanos";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
-function ListaPlanos() {
+function ListaPlanosAdm() {
 
     const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ function ListaPlanos() {
     useEffect(() => {
         if (token === '') {
             ToastAlerta("Você precisa estar logado!", "info")
-            navigate('/');
+            navigate('/login');
         }
     }, [token])
 
@@ -72,4 +72,4 @@ function ListaPlanos() {
     );
 }
 
-export default ListaPlanos;
+export default ListaPlanosAdm;
