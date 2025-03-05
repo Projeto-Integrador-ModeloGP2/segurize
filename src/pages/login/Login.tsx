@@ -99,11 +99,7 @@ function Login() {
           </p>
         </form>
         <div className="flex flex-col justify-center items-center">
-<<<<<<< HEAD
           <h1 className="text-5xl font-bold mb-6 text-center text-[#0A0A3C]">
-=======
-          <h1 className="text-5xl font-bold mb-6 text-center">
->>>>>>> e916a9f3554e6ec6a8c29005b8df1f93c3e82bf6
             <span className="text-green-600 ">Segurize</span> Soluções em
             Seguros
           </h1>
