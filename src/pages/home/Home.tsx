@@ -1,4 +1,4 @@
-import ListaPlanos1 from "../../components/planos/listaplanos/ListaPlanos1";
+import ListaPlanos1 from "../../components/planos/listaplanos/ListaPlanos";
 import ModalPlano from "../../components/planos/modalplanos/ModalPlanos";
 
 function Home() {

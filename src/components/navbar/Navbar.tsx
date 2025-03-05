@@ -10,7 +10,7 @@ function Navbar() {
   function logout() {
     handleLogout();
     ToastAlerta("O Usuário foi desconectado com sucesso!", "sucesso");
-    navigate("/");
+    navigate("/home");
   }
 
   if (!usuario?.token) {
