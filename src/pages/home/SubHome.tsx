@@ -49,7 +49,7 @@ function SubHome() {
         </div>
 
         {/* 2° Bloco - Veículos */}
-        <div className="w-screen bg-[#F0F4FA]">
+        <div className="w-screen bg-[#F0F4FA] flex items-center justify-center">
           <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
             <div className="flex justify-center">
               <Link to="/formplanoscarro">
@@ -113,7 +113,7 @@ function SubHome() {
         </div>
         {/* bloco 4 */}
 
-        <div className="w-screen bg-[#F0F4FA]">
+        <div className="w-screen bg-[#F0F4FA] flex items-end justify-end">
           <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-8">
             <div className="text-left">
               <h2 className="text-4xl font-bold mb-6">
@@ -204,7 +204,7 @@ function SubHome() {
           </div>
         </div>
         {/* nosso contato */}
-        <div className="w-screen bg-[#00003C]">
+        <div className="w-screen bg-[#00003C] flex items-center justify-center">
           <div className="container text-[#ffff] text-center m-10">
             <h2 className="text-4xl font-bold mb-6">Fale Conosco</h2>
             <p className="text-2xl mb-4">
