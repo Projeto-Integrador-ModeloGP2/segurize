@@ -19,9 +19,6 @@ function Navbar() {
           <img src="/logo4.svg" alt="Segurize" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
-<<<<<<< HEAD
-          <Link to="/login" className="font-bold hover:scale-105">
-=======
           <Link
             to="/planos"
             className="font-bold hover:scale-105 text-[#1A1A1A]"
@@ -32,7 +29,6 @@ function Navbar() {
             to="/login"
             className="font-bold hover:scale-105 text-[#333333]"
           >
->>>>>>> Clara
             Login
           </Link>
           <Link to="/sobrenos" className="font-bold hover:scale-105">

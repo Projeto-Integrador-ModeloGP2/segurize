@@ -25,7 +25,7 @@ import SeguradoraPages from "./pages/seguradoras/SeguradorasPage";
 import Teste from "./teste/teste/teste";
 import ListaPlanosAdm from "./components/planos/listaplanos/ListaPlanosAdm";
 import ListaPlanosUsuario from "./components/planos/listaplanos/ListaPlanosUsuario";
-import CarroPlanos from "./teste/CarroPlanos";
+
 
 
 
@@ -42,7 +42,7 @@ function App() {
               <Route path="/" element={<SubHome />} />
               <Route path="/home" element={<Home />} />
               <Route path="/subhome" element={<SubHome />} />
-              <Route path="/carroplanos" element={<CarroPlanos />} />
+              
               <Route path="/formplanoscarro" element={<FormPlanosCarro />} />
               <Route path="/formplanosmoto" element={<FormPlanosMoto />} />
               <Route path="/cadastro" element={<Cadastro />} />
