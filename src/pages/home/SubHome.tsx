@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SubHome() {
   return (
     <>
-      <div className="bg-[#DFEAFE]  flex flex-col items-center pt-30">
+      <div className="bg-[]  flex flex-col items-center pt-30">
         {/* 1° Bloco */}
 
         <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-1">
@@ -15,13 +15,8 @@ function SubHome() {
             <h3 className="text-4xl font-bold mb-6">
               A melhor proteção veicular do Brasil
             </h3>
-<<<<<<< HEAD
-            <p className="text-2xl text-[#1E293B] mb-4">
-              Bem-vindo à <strong className="text-blue-500">Segurize</strong>,
-=======
             <p className="text-2xl mb-4">
               Bem-vindo à <strong className="text-blue-800">Segurize</strong>,
->>>>>>> e916a9f3554e6ec6a8c29005b8df1f93c3e82bf6
               sua especialista em proteção veicular.
             </p>
             <p className="text-2xl text-[#1E293B] mb-4">
