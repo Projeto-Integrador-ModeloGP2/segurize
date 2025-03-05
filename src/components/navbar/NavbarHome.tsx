@@ -10,7 +10,7 @@ function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-[#0A0A2A]/50 backdrop-blur-lg text-white flex justify-center py-4 shadow-lg z-50 border border-white/10">
+    <div className="fixed top-0 left-0 w-full bg-[#0A0A2A] text-white flex justify-center py-4 shadow-lg z-50 border border-white/10">
       <div className="container flex justify-between text-lg">
         <Link
           to="/subhome"
