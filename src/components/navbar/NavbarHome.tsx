@@ -14,11 +14,12 @@ function Navbar() {
       <div className="container flex justify-between text-lg">
         <Link
           to="/subhome"
-          className="text-2xl font-bold hover:scale-105 text-blue-500"
+          className="text-2xl font-bold hover:scale-105 text-blue-800"
         >
           <img src="/logo2.svg" alt="Segurize" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
+<<<<<<< HEAD
           <Link
             to="/planos"
             className="font-bold hover:scale-105 text-[#1A1A1A]"
@@ -29,7 +30,13 @@ function Navbar() {
             to="/login"
             className="font-bold hover:scale-105 text-[#333333]"
           >
+=======
+          <Link to="/login" className="font-bold hover:scale-105">
+>>>>>>> e916a9f3554e6ec6a8c29005b8df1f93c3e82bf6
             Login
+          </Link>
+          <Link to="/sobrenos" className="font-bold hover:scale-105">
+            Sobre Nós
           </Link>
         </div>
       </div>

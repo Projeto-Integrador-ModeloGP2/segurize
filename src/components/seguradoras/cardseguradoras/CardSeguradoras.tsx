@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import { useState } from 'react';
+>>>>>>> e916a9f3554e6ec6a8c29005b8df1f93c3e82bf6
 import { Link } from "react-router-dom";
 import Seguradora from "../../../models/Seguradora";
 import CardPlanos from "../../planos/cardplanos/CardPlanos";

@@ -72,11 +72,11 @@ function Cadastro() {
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400">
         <div className=" hidden lg:block">
           <h1 className="text-5xl font-bold mb-30 text-center">
-            <span className="text-blue-600 ">Segurize</span> Soluções em Seguros
+            <span className="text-blue-800 ">Segurize</span> Soluções em Seguros
           </h1>
           <img
-            src="public/veiculos/carromoto.avif"
-            alt="Imagem Creta"
+            src="public/veiculos/carromoto.png"
+            alt="Imagem Carro e Moto"
             className="w-full cursor-pointer scale-120"
           />
         </div>

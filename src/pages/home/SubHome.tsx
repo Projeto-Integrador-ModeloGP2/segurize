@@ -9,14 +9,19 @@ function SubHome() {
         <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-1">
           <div className="text-left">
             <h1 className="text-4xl font-bold mb-6">
-              <span className="text-blue-500">Segurize</span> Soluções em
+              <span className="text-blue-800">Segurize</span> Soluções em
               Seguros{" "}
             </h1>
             <h3 className="text-4xl font-bold mb-6">
               A melhor proteção veicular do Brasil
             </h3>
+<<<<<<< HEAD
             <p className="text-2xl text-[#1E293B] mb-4">
               Bem-vindo à <strong className="text-blue-500">Segurize</strong>,
+=======
+            <p className="text-2xl mb-4">
+              Bem-vindo à <strong className="text-blue-800">Segurize</strong>,
+>>>>>>> e916a9f3554e6ec6a8c29005b8df1f93c3e82bf6
               sua especialista em proteção veicular.
             </p>
             <p className="text-2xl text-[#1E293B] mb-4">
@@ -131,7 +136,7 @@ function SubHome() {
         <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-8">
           <div className="text-left">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="text-blue-500">Seguros</span> com tecnologia,
+              <span className="text-blue-800">Segurize</span> com tecnologia,
               rapidez e zero burocracia.
             </h2>
             <p className="text-2xl mb-4">
