@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/home/cadastro/Cadastro";
@@ -26,8 +25,7 @@ import SeguradoraPages from "./pages/seguradoras/SeguradorasPage";
 import Teste from "./teste/teste/teste";
 import ListaPlanosAdm from "./components/planos/listaplanos/ListaPlanosAdm";
 import ListaPlanosUsuario from "./components/planos/listaplanos/ListaPlanosUsuario";
-
-
+import Navbar from "./components/navbar/NavbarHome";
 
 function App() {
   return (
