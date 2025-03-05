@@ -96,18 +96,18 @@ function FormPlanosMotos() {
 
   return (
     <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 p-4 mt-15">
         {/* Coluna de Texto */}
         <div className="text-left text-white gap-8 ">
           <h1 className="text-4xl mt-10 mb-10 font-bold">
-            <span className="text-blue-500">Segurize</span> Soluções em Seguros
+            <span className="text-blue-800">Segurize</span> Soluções em Seguros
           </h1>
           <p className="text-2xl mb-4">
             Preencha os campos à direita para começar a proteger sua moto com os
             melhores planos de seguro.
           </p>
           <p className="text-2x1 mb-4">
-            A <span className="text-blue-500">Segurize</span> é especializada em
+            A <span className="text-blue-800">Segurize</span> é especializada em
             oferecer as melhores soluções em proteção veicular, com planos que
             atendem a diferentes necessidades e orçamentos. Garantimos a você
             tranquilidade e segurança, com cobertura ampla e suporte dedicado
@@ -117,7 +117,7 @@ function FormPlanosMotos() {
             Não importa o tipo de veículo que você possui, nossos planos são
             flexíveis e podem ser ajustados para oferecer a melhor proteção para
             motos e outros. Com a{" "}
-            <span className="text-blue-500">Segurize</span>, você tem a certeza
+            <span className="text-blue-800">Segurize</span>, você tem a certeza
             de que sua moto estará protegida contra imprevistos, oferecendo
             assistência 24 horas e cobertura em caso de acidentes, roubo ou
             danos.

@@ -18,9 +18,11 @@ function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-gradient-to-r from-green-400/30 to-blue-500/30 backdrop-blur-[2px] text-black flex justify-center py-4 shadow-lg z-50 border border-white/10">
+    <div className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-gray-200 flex justify-center py-4">
+
       <div className="container flex justify-between text-lg">
-        <Link to="/home" className="text-2xl font-bold hover:scale-105">
+
+        <Link to="/home" className="text-2xl font-bold hover:scale-105 text-blue-800">
           Segurize
         </Link>
 

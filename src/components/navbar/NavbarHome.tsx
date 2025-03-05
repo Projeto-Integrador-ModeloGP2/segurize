@@ -10,11 +10,11 @@ function Navbar() {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white/5 backdrop-blur-[2px] text-black flex justify-center py-4 shadow-lg z-50 border border-white/10">
+    <div className="fixed top-0 left-0 w-full bg-white/5 backdrop-blur-[2px] text-gray-200 flex justify-center py-4 shadow-lg z-50 border border-white/10">
       <div className="container flex justify-between text-lg">
         <Link
           to="/subhome"
-          className="text-2xl font-bold hover:scale-105 text-blue-500"
+          className="text-2xl font-bold hover:scale-105 text-blue-800"
         >
           Segurize
         </Link>
