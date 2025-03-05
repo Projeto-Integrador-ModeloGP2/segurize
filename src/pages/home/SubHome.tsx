@@ -3,40 +3,41 @@ import { Link } from "react-router-dom";
 function SubHome() {
   return (
     <>
-      <div className="bg-gradient-to-r from-green-300 to-blue-400 flex flex-col items-center">
+      <div className="bg-[#DFEAFE]  flex flex-col items-center pt-30">
         {/* 1° Bloco */}
 
-        <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
+        <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-1">
           <div className="text-left">
             <h1 className="text-4xl font-bold mb-6">
-              <span className="text-blue-500">Segurize</span> Soluções em
+              <span className="text-blue-800">Segurize</span> Soluções em
               Seguros{" "}
             </h1>
             <h3 className="text-4xl font-bold mb-6">
               A melhor proteção veicular do Brasil
             </h3>
-            <p className="text-2xl mb-4">
+            <p className="text-2xl text-[#1E293B] mb-4">
               Bem-vindo à <strong className="text-blue-500">Segurize</strong>,
               sua especialista em proteção veicular.
             </p>
-            <p className="text-2xl mb-4">
+            <p className="text-2xl text-[#1E293B] mb-4">
               Trabalhamos com as seguradoras mais confiáveis do mercado para
               garantir a segurança do que realmente importa para você.
             </p>
-            <p className="text-2xl mb-4">
+            <p className="text-2xl text-[#1E293B] mb-4">
               Escolha abaixo entre carro ou moto e clique na imagem para
               conferir os planos disponíveis.
             </p>
 
             <p className="font-bold">
-            Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline font-bold">
-              Cadastre-se
-            </Link>
-          </p>
+              Ainda não tem uma conta?{" "}
+              <Link
+                to="/cadastro"
+                className="text-[#0505FF] hover:underline font-bold"
+              >
+                Cadastre-se
+              </Link>
+            </p>
           </div>
-
-          
 
           <div className="flex justify-center">
             <img
@@ -55,7 +56,7 @@ function SubHome() {
               <img
                 src="public/veiculos/creta.png"
                 alt="Imagem Creta"
-                className="w-full cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="w-full cursor-pointer hover:scale-120 transition-transform duration-300"
               />
             </Link>
           </div>
@@ -72,7 +73,7 @@ function SubHome() {
         </div>
         {/* 3° Bloco - Parceiros */}
 
-        <div className="text-black text-center p-8">
+        <div className="text-[#0A0A3C] text-center p-8">
           <h2 className="text-4xl font-bold mb-8">
             Confira os nossos parceiros
           </h2>
@@ -92,7 +93,7 @@ function SubHome() {
 
         <div className="container grid grid-cols-2 items-center text-black gap-8 p-8">
           <div className="flex justify-center">
-          <img
+            <img
               src="pessoas/capa2.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl rotate-z-358 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
@@ -100,25 +101,25 @@ function SubHome() {
           </div>
 
           <div className="text-left">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl text-[#0A0A3C] font-bold mb-6">
               Por que escolher a{" "}
               <span className="text-green-600">Segurize</span>?
             </h2>
 
-            <p className="text-2xl mb-4">
+            <p className="text-2xl text-[#1E293B] mb-4">
               Na Segurize, entendemos que seu veículo é mais do que um meio de
               transporte é parte essencial da sua vida. Por isso, atuamos como
               intermediadores das melhores seguradoras do mercado, oferecendo
               proteção confiável e acessível para carros e motos.
             </p>
-            <p className="text-2xl mb-4">
+            <p className="text-2xl text-[#1E293B] mb-4">
               Nosso compromisso é garantir que você tenha tranquilidade ao
               dirigir, sabendo que seu patrimônio está seguro contra
               imprevistos. Trabalhamos com seguradoras reconhecidas, oferecendo
               planos personalizados que atendem às suas necessidades, desde
               coberturas básicas até planos completos com assistência 24 horas.
             </p>
-            <p className="text-2xl">
+            <p className="text-2xl text-[#1E293B]">
               Com transparência, rapidez e suporte especializado, estamos
               prontos para ajudá-lo a encontrar a melhor solução de seguro,
               proporcionando segurança para você e sua família.
@@ -127,10 +128,10 @@ function SubHome() {
         </div>
         {/* bloco 5 */}
 
-        <div className="container grid grid-cols-2 items-center text-black gap-8 p-8">
+        <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-8">
           <div className="text-left">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="text-blue-500">Seguros</span> com tecnologia,
+              <span className="text-blue-800">Segurize</span> com tecnologia,
               rapidez e zero burocracia.
             </h2>
             <p className="text-2xl mb-4">
@@ -191,7 +192,7 @@ function SubHome() {
           </div>
 
           <div className="flex justify-center">
-          <img
+            <img
               src="/pessoas/capa1.jpg"
               alt="Imagem Página Home"
               className="w-full scale-80 rounded-4xl rotate-z-2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
@@ -200,7 +201,7 @@ function SubHome() {
         </div>
         {/* nosso contato */}
 
-        <div className="container text-black text-center m-10">
+        <div className="container text-[#0A0A3C] text-center m-10">
           <h2 className="text-4xl font-bold mb-6">Fale Conosco</h2>
           <p className="text-2xl mb-4">
             Nossos principais contatos estão aqui:

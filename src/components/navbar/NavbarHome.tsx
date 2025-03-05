@@ -10,22 +10,24 @@ function Navbar() {
   }
 
   return (
-    <div className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-black flex justify-center py-4">
+    <div className="fixed top-0 left-0 w-full bg-[#0A0A2A]/50 backdrop-blur-lg text-white flex justify-center py-4 shadow-lg z-50 border border-white/10">
       <div className="container flex justify-between text-lg">
-        <Link to="/subhome" className="text-2xl font-bold hover:scale-105 text-blue-500">
-          Segurize
+        <Link
+          to="/subhome"
+          className="text-2xl font-bold hover:scale-105 text-blue-800"
+        >
+          <img src="/logo2.svg" alt="Segurize" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
-          <Link to="/planos" className="font-bold hover:scale-105">
-            Planos
-          </Link>
           <Link to="/login" className="font-bold hover:scale-105">
             Login
+          </Link>
+          <Link to="/sobrenos" className="font-bold hover:scale-105">
+            Sobre Nós
           </Link>
         </div>
       </div>
     </div>
   );
 }
-
 export default Navbar;

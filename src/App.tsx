@@ -10,7 +10,7 @@ import FormPlano from "./components/planos/formplano/FormPlano";
 import DeletarPlano from "./components/planos/deletarplano/DeletarPlano";
 import FormSeguradora from "./components/seguradoras/formseguradora/FormSeguradora";
 import DeletarSeguradora from "./components/seguradoras/deletarseguradora/DeletarSeguradora";
-import ListaPlanos1 from "./components/planos/listaplanos/ListaPlanos1";
+
 import Perfil from "./pages/perfil/Perfil";
 import CardSobreNos from "./pages/SobreNos/CardSobreNos";
 import { ToastContainer } from "react-toastify";
@@ -18,13 +18,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FormPlanosMoto from "./pages/home/moto/FormPlanosMoto";
 import FormPlanosCarro from "./pages/home/carro/FormPlanosCarro";
-import CarroPlanos from "./pages/home/carro/CarroPlanos";
+import CarroPlanos from "./teste/CarroPlanos";
 import SubHome from "./pages/home/SubHome";
 import NavbarHome from "./components/navbar/NavbarHome";
 
-
 import SeguradoraPages from "./pages/seguradoras/SeguradorasPage";
-import Teste from "./components/planos/teste/teste";
+import Teste from "./teste/teste/teste";
+import ListaPlanosAdm from "./components/planos/listaplanos/ListaPlanosAdm";
+import ListaPlanosUsuario from "./components/planos/listaplanos/ListaPlanosUsuario";
+
 
 
 function App() {
@@ -50,12 +52,19 @@ function App() {
               <Route path="/deletarplano/:id" element={<DeletarPlano />} />
               <Route path="/cadastrarseguradora" element={<FormSeguradora />} />
               <Route path="/seguradoras" element={<SeguradoraPages />} />
-              <Route path="/editarseguradora/:id"element={<FormSeguradora />}/>
-              <Route path="/deletarseguradora/:id"element={<DeletarSeguradora />}/>
+              <Route
+                path="/editarseguradora/:id"
+                element={<FormSeguradora />}
+              />
+              <Route
+                path="/deletarseguradora/:id"
+                element={<DeletarSeguradora />}
+              />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/planos" element={<ListaPlanos1 />} />
-              <Route path="/sobrenos" element={<CardSobreNos />} />            
+              <Route path="/planosadm" element={<ListaPlanosAdm />} />
+              <Route path="/sobrenos" element={<CardSobreNos />} />
               <Route path="/teste" element={<Teste />} />
+              <Route path="/planos" element={<ListaPlanosUsuario />} />
             </Routes>
           </div>
           <Footer />
