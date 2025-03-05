@@ -143,11 +143,11 @@ function SubHome() {
                 alt="Chave sendo inserida em um cadeado"
                 className="w-12 h-12"
               />
-              <p className="text-2xl">Com proteção</p>
+              <p className="text-2xl"><strong>Com proteção</strong></p>
             </div>
 
             <p className="text-2xl mb-4">
-              Tranquilidade e confiança pro seu dia a dia.
+              Tranquilidade e confiança para seu dia a dia.
             </p>
 
             <div className="flex items-center gap-4 mb-4">
@@ -156,7 +156,7 @@ function SubHome() {
                 alt="Homem deitado em um pato inflável na água"
                 className="w-12 h-12"
               />
-              <p className="text-2xl">Faça tudo online</p>
+              <p className="text-2xl"><strong>Faça tudo online</strong></p>
             </div>
 
             <p className="text-2xl mb-4">
@@ -169,7 +169,7 @@ function SubHome() {
                 alt="Mulher alterando as configurações de um sistema"
                 className="w-12 h-12"
               />
-              <p className="text-2xl">Personalize</p>
+              <p className="text-2xl"><strong>Personalize</strong></p>
             </div>
 
             <p className="text-2xl mb-4">
@@ -182,11 +182,11 @@ function SubHome() {
                 alt="Coelho competindo em uma corrida com uma barra de carregamento"
                 className="w-12 h-12"
               />
-              <p className="text-2xl">No seu tempo</p>
+              <p className="text-2xl"><strong>No seu tempo</strong></p>
             </div>
 
             <p className="text-2xl mt-4">
-              Agilidade e facilidade sem aqueles prazos enormes.
+              Agilidade e facilidade, sem aqueles prazos enormes.
             </p>
           </div>
 
