@@ -6,7 +6,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
 import { buscar } from "../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import CardPlano1 from "../cardplanos/CardPlanos";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
@@ -48,14 +48,26 @@ function ListaPlanos1() {
     return (
         <>
             {planos.length === 0 && (
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
+                <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  minHeight: "100vh", // ocupa 100% da altura da viewport
+                }}
+              >
+                <ThreeDots
+                  visible={true}
+                  height="120"
+                  width="120"
+                  color="#00003c"
+                  radius="9"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
                 />
+              </div>
+              
             )}
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col mx-2">

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
-import { DNA } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
@@ -44,14 +44,16 @@ function ListaPlanos() {
     return (
         <>
         {planos.length === 0 && (
-            <DNA
+            <ThreeDots
             visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
+            height="80"
+            width="80"
+            color="#4fa94d"
+            radius="9"
+            ariaLabel="three-dots-loading"
             wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
-        />
+            wrapperClass=""
+            />
         )}
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col">
