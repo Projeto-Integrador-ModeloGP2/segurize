@@ -15,7 +15,7 @@ function ListaPlanosUsuario() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
-    // Função para buscar planos da API
+   
     async function buscarPlanos() {
         try {
             await buscar('/planos', (result: Plano[]) => {

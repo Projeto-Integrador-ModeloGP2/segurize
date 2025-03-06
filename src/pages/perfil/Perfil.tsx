@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { ToastAlerta } from "../../utils/ToastAlerta";
-import Plano from "../../models/Plano"; // Importando a model Plano
+// Importando a model Plano
 
 function Perfil() {
   const navigate = useNavigate();
@@ -36,32 +36,6 @@ function Perfil() {
         <div className="relative mt-[-4rem] h-72 flex flex-col bg-sky-500 text-white text-2xl items-center justify-center">
           <p>Nome: {usuario.nome} </p>
           <p>Email: {usuario.usuario}</p>
-          {/* Verificando se o usuário tem plano vinculado */}
-          {usuario.plano ? (
-            <div className="mt-4 bg-white text-sky-500 p-4 rounded-md">
-              <h3 className="font-semibold text-xl">Plano Vinculado</h3>
-              <p>
-                <strong>Nome do Plano:</strong> {usuario.plano.nome}
-              </p>
-              <p>
-                <strong>Descrição:</strong> {usuario.plano.descricao}
-              </p>
-              <p>
-                <strong>Valor:</strong> {usuario.plano.valor}
-              </p>
-              <p>
-                <strong>Vigência:</strong> {usuario.plano.vigencia}
-              </p>
-              <p>
-                <strong>Status:</strong>{" "}
-                {usuario.plano.status ? "Ativo" : "Inativo"}
-              </p>
-            </div>
-          ) : (
-            <p className="mt-4 text-white">
-              Você não tem nenhum plano vinculado.
-            </p>
-          )}
         </div>
       </div>
     </div>

@@ -69,15 +69,16 @@ function Cadastro() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-b from-[#AEE2FF] to-[#DCE4FF]">
         <div className=" hidden lg:block">
-          <h1 className="text-5xl font-bold mb-30 text-center">
-            <span className="text-blue-800 ">Segurize</span> Soluções em Seguros
+          <h1 className="text-5xl font-bold text-[#0A0A3C] mb-30 text-center">
+            <span className="text-[#0000FF] ">Segurize</span> Soluções em
+            Seguros
           </h1>
           <img
             src="public/veiculos/carromoto.png"
             alt="Imagem Carro e Moto"
-            className="w-full cursor-pointer scale-120"
+            className="w-full cursor-pointer scale-100"
           />
         </div>
 
@@ -85,7 +86,7 @@ function Cadastro() {
           className="flex justify-center items-center flex-col w-2/3 gap-3"
           onSubmit={cadastrarNovoUsuario}
         >
-          <h2 className="text-white-900 text-5xl">Cadastrar</h2>
+          <h2 className="text-[#0A0A3C] text-5xl">Cadastrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
@@ -159,16 +160,16 @@ function Cadastro() {
           <div className="flex justify-around w-full gap-8">
             <button
               type="reset"
-              className="rounded text-white bg-red-500 
-                hover:bg-red-700 w-1/2 py-2"
+              className="rounded text-white bg-[#F43F5E]
+                hover:bg-[#DC2C4A] w-1/2 py-2"
               onClick={retornar}
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="rounded text-white bg-green-400 
-                           hover:bg-green-700 w-1/2 py-2
+              className="rounded text-white bg-[#2DD4BF] 
+                           hover:bg-[#25B3A2] w-1/2 py-2
                            flex justify-center"
             >
               {isLoading ? (

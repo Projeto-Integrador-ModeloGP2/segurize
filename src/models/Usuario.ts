@@ -7,5 +7,5 @@ export default interface Usuario {
   usuario: string;
   senha: string;
   foto: string;
-  plano?: Plano[] | null;
+  plano?: Plano | null;
 }
