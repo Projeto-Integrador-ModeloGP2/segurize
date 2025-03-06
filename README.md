@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# <div align = "center"> Projeto CRM </div>
+##  ![faviconWH b](https://github.com/user-attachments/assets/c6297613-2550-40e1-aaa5-94af96a7e849)  Plataforma de Seguros - Segurize  🏍️ 🚙
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br>
 
-Currently, two official plugins are available:
+  <div align = "center">  O Front-end do projeto foi construído de forma intuitiva e funcional ao usuário, utilizando recursos de linguagens de marcação HTML, estilização CSS e programação JavaScript e TypeScript, além da biblioteca React e framework Tailwind CSS. O site possui dados estruturados, layout leve, limpo e organizado e traz funcionalidades como design responsivo e usabilidade.
+</div>
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Interface do site     
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Captura de tela_6-3-2025_13538_localhost268](https://github.com/user-attachments/assets/79d77011-8531-40a5-86c2-9a0aa9aa3b6a) ![Captura de tela_6-3-2025_13829_localhost200](https://github.com/user-attachments/assets/91cc4929-ff94-4fc1-be15-0b6ef10bbefb)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+<br>
+
+## 🚀 Tecnologias
+Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+- JavaScript
+- TypeScript
+- HTML
+- CSS
+- React
+- Tailwind CSS
+- Git
+- Github
+- Figma
+  
+<br>
+
+### Equipe responsável pelo projeto
+- @jessicagomess Jessica
+- @clarabarbosa
+- @MarcosIyama
+- @CarolinyCaproni
+- @HenriqueAndras1 Henrique
