@@ -15,7 +15,7 @@ const alunosArr: Alunos[] = [
     email: "mailto:jessicagomesprocesso@gmail.com",
     linkedin: "https://www.linkedin.com/in/jessicagomesss/",
     github: "https://github.com/jessicagomess",
-    foto: "/alunos/jessica.jpg",
+    foto: "/alunos/Jessica-2.jpg",
   },
   {
     name: "Maria Clara Barbosa",
@@ -45,7 +45,10 @@ const alunosArr: Alunos[] = [
 
 function CardSobreNos() {
   return (
-    <div className="flex flex-wrap gap-4 justify-center pt-30 bg-[#E3F2FD]">
+    <div
+      className="flex flex-wrap gap-4 justify-center pt-30 bg-[#E3F2FD] 
+"
+    >
       {alunosArr.map(({ name, frase, email, github, linkedin, foto }) => {
         return (
           <Card

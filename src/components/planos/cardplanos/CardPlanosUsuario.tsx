@@ -7,11 +7,12 @@ interface CardPlanoUsuarioProps {
 function CardPlanosUsuario({ plano }: CardPlanoUsuarioProps) {
   return (
     <div
-      className="border-slate-900 border 
-            flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2 mt-10 "
+      className="border-white/20 border 
+            flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2 mt-10 bg-[#b1c8dd]
+            "
     >
       <div>
-        <div className="flex w-full bg-gradient-to-r from-green-300 to-blue-400 py-2 px-4 items-center gap-4">
+        <div className="flex w-full bg-blue-400 py-2 px-4 items-center gap-4">
           <h3 className="text-lg font-bold text-center uppercase flex-1/2 text-gray-700">
             {plano.seguradora?.nome}
           </h3>
