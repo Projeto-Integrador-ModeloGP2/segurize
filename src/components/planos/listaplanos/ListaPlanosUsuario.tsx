@@ -71,73 +71,77 @@ function ListaPlanosUsuario() {
   };
 
   return (
-    <div className="flex justify-center w-full my-4 bg-[#E3F2FD]">
-      <div className="container flex gap-4 mx-2">
-        {/* Coluna Esquerda - Cards */}
-        <div className="flex-1 flex flex-col gap-4">
-          {/* Filtro de preço com slider */}
-          <div className="flex flex-col gap-4 mb-4">
-            <label>Filtrar por preço (Máximo)</label>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center justify-between">
-                <span>{formatarMoeda(0)}</span>
-                <input
-                  type="range"
-                  min="0"
-                  max="10000"
-                  step="10"
-                  value={faixaPreco}
-                  onChange={handlePrecoChange}
-                  className="w-full"
-                />
-                <span>{formatarMoeda(faixaPreco)}</span>
+    <div className="w-screen pt-20 pb-20 bg-[#E3F2FD]">
+      <div className="flex justify-center w-full">
+        <div className="container flex gap-4 mx-10">
+          {/* Coluna Esquerda - Cards */}
+          <div className="flex-1 flex flex-col gap-4">
+            {/* Filtro de preço com slider */}
+            <div className="flex flex-col gap-4 mb-4">
+              <label>Filtrar por preço (Máximo)</label>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center justify-between">
+                  <span>{formatarMoeda(0)}</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="10000"
+                    step="10"
+                    value={faixaPreco}
+                    onChange={handlePrecoChange}
+                    className="w-full"
+                  />
+                  <span>{formatarMoeda(faixaPreco)}</span>
+                </div>
               </div>
+            </div>
+
+            {/* Carregando planos ou exibição */}
+            {planosFiltrados.length === 0 && (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  minHeight: "100vh", // ocupa 100% da altura da viewport
+                }}
+              >
+                <ThreeDots
+                  visible={true}
+                  height="120"
+                  width="120"
+                  color="#00003c"
+                  radius="9"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            )}
+
+            {/* Exibição dos planos filtrados com cards */}
+            <div className="flex flex-col gap-4 mt-4">
+              {planosFiltrados.map((plano) => (
+                <CardPlanosUsuario key={plano.id} plano={plano} />
+              ))}
             </div>
           </div>
 
-          {/* Carregando planos ou exibição */}
-          {planosFiltrados.length === 0 && (
-            <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minHeight: "100vh", // ocupa 100% da altura da viewport
-            }}
-          >
-            <ThreeDots
-              visible={true}
-              height="120"
-              width="120"
-              color="#00003c"
-              radius="9"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
+          {/* Coluna Direita - Parágrafo e Imagem */}
+          <div className="flex-1 flex flex-col justify-center items-center p-4 text-[#00003C]">
+            <h2 className="text-[28px] text-xl font-semibold mb-4">
+              Seja bem-vindo!
+            </h2>
+            <p className=" text-[18px] text-lg mb-4 text-[#00003C]">
+              Aqui você pode encontrar planos que atendem suas necessidades,
+              filtrados pelo seu preço máximo.
+            </p>
+            <img
+              src="veiculos/lancer.png"
+              alt="Imagem exemplo"
+              className="w-full "
             />
           </div>
-          )}
-
-          {/* Exibição dos planos filtrados com cards */}
-          <div className="flex flex-col gap-4 mt-4">
-            {planosFiltrados.map((plano) => (
-              <CardPlanosUsuario key={plano.id} plano={plano} />
-            ))}
-          </div>
-        </div>
-
-        {/* Coluna Direita - Parágrafo e Imagem */}
-        <div className="flex-1 flex flex-col justify-center items-center p-4">
-          <h2 className="text-xl font-semibold mb-4">Seja bem-vindo!</h2>
-          <p className="text-lg mb-4">
-            Aqui você pode encontrar planos que atendem suas necessidades,
-            filtrados pelo seu preço máximo.
-          </p>
-          <img
-            src="veiculos/hb20.png"
-            alt="Imagem exemplo"
-            className="w-full "
-          />
         </div>
       </div>
     </div>
