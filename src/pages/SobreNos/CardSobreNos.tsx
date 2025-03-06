@@ -26,7 +26,7 @@ const alunosArr: Alunos[] = [
     foto: "/alunos/mariaclara.jpg",
   },
   {
-    name: "Marcos Ogata Hamamoto Iyama",
+    name: "Marcos K. Ogata Hamamoto Iyama",
     frase: "Desenvolvedor Fullstack Júnior",
     email: "mailto:marcosiyama@gmail.com",
     linkedin: "https://www.linkedin.com/in/marcos-iyama-1b232031b/",

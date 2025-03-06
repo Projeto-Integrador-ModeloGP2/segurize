@@ -2,18 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { ThreeDots } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
 import Usuario from "../../../models/Usuario";
 import { cadastrarUsuario } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-
+ 
 function Cadastro() {
   const navigate = useNavigate();
-
+ 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+ 
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
-
+ 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: "",
@@ -21,37 +21,42 @@ function Cadastro() {
     senha: "",
     foto: "",
   });
-
+ 
   useEffect(() => {
     if (usuario.id !== 0) {
       retornar();
     }
   }, [usuario]);
-
+ 
   function retornar() {
-    navigate("/subhome");
+    navigate("/login");
   }
-
+ 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
     });
   }
-
+ 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmaSenha(e.target.value);
   }
-
+ 
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
+ 
+    // Verifica se a foto está vazia e atribui a imagem padrão caso esteja
+    if (!usuario.foto) {
+      usuario.foto = "https://media.istockphoto.com/id/1142192548/pt/vetorial/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=612x612&w=0&k=20&c=jM0A3ijNgtNtX3HANg6w9v0gttMeFriuA7ms_890hhc=";
+    }
+ 
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       setIsLoading(true);
-
+ 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        ToastAlerta("'Usuário cadastrado com sucesso!", "sucesso");
+        ToastAlerta("Usuário cadastrado com sucesso!", "sucesso");
       } catch (error) {
         ToastAlerta("Erro ao cadastrar o usuário!", "erro");
       }
@@ -63,10 +68,10 @@ function Cadastro() {
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
-
+ 
     setIsLoading(false);
   }
-
+ 
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-b from-[#AEE2FF] to-[#DCE4FF]">
@@ -81,7 +86,7 @@ function Cadastro() {
             className="w-full cursor-pointer scale-100"
           />
         </div>
-
+ 
         <form
           className="flex justify-center items-center flex-col w-2/3 gap-3"
           onSubmit={cadastrarNovoUsuario}
@@ -168,29 +173,18 @@ function Cadastro() {
             </button>
             <button
               type="submit"
-              className="rounded text-white bg-[#0A0A3C] hover:bg-blue-900 
-                           w-1/2 py-2
+              className="rounded text-white bg-[#2DD4BF]
+                           hover:bg-[#25B3A2] w-1/2 py-2
                            flex justify-center"
             >
               {isLoading ? (
-                <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-                <ThreeDots
+                <RotatingLines
+                  strokeColor="white"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  width="24"
                   visible={true}
-                  height="40"
-                  width="40"
-                  color="#00003c"
-                  radius="9"
-                  ariaLabel="three-dots-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
                 />
-              </div>
               ) : (
                 <span>Cadastrar</span>
               )}
@@ -201,5 +195,5 @@ function Cadastro() {
     </>
   );
 }
-
+ 
 export default Cadastro;

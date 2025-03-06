@@ -11,7 +11,6 @@ import DeletarPlano from "./components/planos/deletarplano/DeletarPlano";
 import FormSeguradora from "./components/seguradoras/formseguradora/FormSeguradora";
 import DeletarSeguradora from "./components/seguradoras/deletarseguradora/DeletarSeguradora";
 
-import Perfil from "./pages/perfil/Perfil";
 import CardSobreNos from "./pages/SobreNos/CardSobreNos";
 import { ToastContainer } from "react-toastify";
 
@@ -24,6 +23,7 @@ import NavbarHome from "./components/navbar/NavbarHome";
 import SeguradoraPages from "./pages/seguradoras/SeguradorasPage";
 import ListaPlanosAdm from "./components/planos/listaplanos/ListaPlanosAdm";
 import ListaPlanosUsuario from "./components/planos/listaplanos/ListaPlanosUsuario";
+import PerfilUsuario from "./components/usuario/PerfilUsuario";
 
 
 
@@ -58,7 +58,7 @@ function App() {
                 path="/deletarseguradora/:id"
                 element={<DeletarSeguradora />}
               />
-              <Route path="/perfil" element={<Perfil />} />
+              <Route path="/perfil" element={<PerfilUsuario />} />
               <Route path="/planosadm" element={<ListaPlanosAdm />} />
               <Route path="/sobrenos" element={<CardSobreNos />} />
               <Route path="/planos" element={<ListaPlanosUsuario />} />
