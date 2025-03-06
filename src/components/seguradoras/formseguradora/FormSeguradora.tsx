@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { RotatingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Seguradora from "../../../models/Seguradora";
@@ -127,13 +127,25 @@ function FormSeguradora() {
           type="submit"
         >
           {isLoading ? (
-            <RotatingLines
-              strokeColor="white"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="24"
+            <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "100vh", // ocupa 100% da altura da viewport
+            }}
+          >
+            <ThreeDots
               visible={true}
+              height="120"
+              width="120"
+              color="#00003c"
+              radius="9"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
             />
+          </div>
           ) : (
             <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
           )}

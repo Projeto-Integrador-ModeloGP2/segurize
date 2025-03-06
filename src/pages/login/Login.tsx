@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import UsuarioLogin from "../../models/UsuarioLogin";
-import { RotatingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 function Login() {
   const navigate = useNavigate();
@@ -77,13 +77,25 @@ function Login() {
                                    hover:bg-[#0055FF] text-white w-1/2 py-2"
           >
             {isLoading ? (
-              <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
+              <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                minHeight: "100vh", // ocupa 100% da altura da viewport
+              }}
+            >
+              <ThreeDots
                 visible={true}
+                height="120"
+                width="120"
+                color="#00003c"
+                radius="9"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
               />
+            </div>
             ) : (
               <span>Entrar</span>
             )}

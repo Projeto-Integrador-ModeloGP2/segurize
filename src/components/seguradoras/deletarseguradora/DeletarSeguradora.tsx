@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import Seguradora from "../../../models/Seguradora"
 import { buscar, deletar } from "../../../services/Service"
-import { RotatingLines } from "react-loader-spinner"
+import { ThreeDots } from "react-loader-spinner"
 import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarSeguradora() {
@@ -97,13 +97,25 @@ function DeletarSeguradora() {
                                    hover:bg-indigo-600 flex items-center justify-center'
                                    onClick={deletarSeguradora}>
                         {isLoading ? 
-                            <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            /> :
+                            <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              minHeight: "100vh", // ocupa 100% da altura da viewport
+                            }}
+                          >
+                            <ThreeDots
+                              visible={true}
+                              height="120"
+                              width="120"
+                              color="#00003c"
+                              radius="9"
+                              ariaLabel="three-dots-loading"
+                              wrapperStyle={{}}
+                              wrapperClass=""
+                            />
+                          </div> :
                             <span>Sim</span>
                         }
                     </button>

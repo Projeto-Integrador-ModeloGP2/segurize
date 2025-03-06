@@ -5,16 +5,16 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react"
 import Usuario from "../../models/Usuario"
 import { useNavigate } from "react-router-dom"
 import { cadastrarUsuario } from "../../services/Service"
-import { RotatingLines } from "react-loader-spinner"
+import { ThreeDots } from "react-loader-spinner"
 
 
 function Teste() {
 
   const navigate = useNavigate()
-  
+
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const[confirmaSenha, setConfirmaSenha] = useState<string>("")
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -23,18 +23,18 @@ function Teste() {
     senha: '',
     foto: ''
   })
-  
+
   useEffect(() => {
-    if (usuario.id !== 0){
+    if (usuario.id !== 0) {
       retornar()
     }
   }, [usuario])
 
-  function retornar(){
+  function retornar() {
     navigate('/home')
   }
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value
@@ -42,38 +42,38 @@ function Teste() {
 
   }
 
-  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>){
+  function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmaSenha(e.target.value)
   }
 
-  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
+  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
+    if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
 
       setIsLoading(true)
 
-      try{
+      try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
-      }catch(error){
+      } catch (error) {
         alert('Erro ao cadastrar o usuário!')
       }
-    }else{
+    } else {
       alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
-      setUsuario({...usuario, senha: ''})
+      setUsuario({ ...usuario, senha: '' })
       setConfirmaSenha('')
     }
 
     setIsLoading(false)
   }
-  
+
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
             place-items-center font-bold">
         <div className="fundoCadastro hidden lg:block"></div>
-        <form className='flex justify-center items-center flex-col w-2/3 gap-3' 
+        <form className='flex justify-center items-center flex-col w-2/3 gap-3'
           onSubmit={cadastrarNovoUsuario}>
           <h2 className='text-slate-900 text-5xl'>Preencha seus dados</h2>
           <div className="flex flex-col w-full">
@@ -84,8 +84,8 @@ function Teste() {
               name="nome"
               placeholder="Nome"
               className="border-2 border-slate-700 rounded p-2"
-             value = {usuario.nome}
-             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              value={usuario.nome}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
@@ -96,8 +96,8 @@ function Teste() {
               name="usuario"
               placeholder="Exemplo@gmail.com"
               className="border-2 border-slate-700 rounded p-2"
-              value = {usuario.usuario}
-             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              value={usuario.usuario}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
@@ -108,8 +108,8 @@ function Teste() {
               name="foto"
               placeholder="Opcional"
               className="border-2 border-slate-700 rounded p-2"
-              value = {usuario.foto}
-             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              value={usuario.foto}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
@@ -120,8 +120,8 @@ function Teste() {
               name="senha"
               placeholder="Senha"
               className="border-2 border-slate-700 rounded p-2"
-              value = {usuario.senha}
-             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              value={usuario.senha}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
           <div className="flex flex-col w-full">
@@ -137,30 +137,43 @@ function Teste() {
             />
           </div>
           <div className="flex justify-around w-full gap-8">
-			<button 
-                type='reset'
-                className='rounded text-black bg-red-500 
-                hover:bg-red-700 w-1/2 py-2' 
-                onClick={retornar}
-			>
+            <button
+              type='reset'
+              className='rounded text-black bg-red-500 
+                hover:bg-red-700 w-1/2 py-2'
+              onClick={retornar}
+            >
               Cancelar
             </button>
-            <button 
-                type='submit'
-                className='rounded text-black bg-[#37cf8d]
+            <button
+              type='submit'
+              className='rounded text-black bg-[#37cf8d]
                            hover:bg-green-700 w-1/2 py-2
-                           flex justify-center' 
+                           flex justify-center'
+            >
+              {isLoading ?
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    minHeight: "100vh", // ocupa 100% da altura da viewport
+                  }}
                 >
-                  {isLoading ? <RotatingLines
-                    strokeColor="white"
-                    strokeWidth="5"
-                    animationDuration="0.75"
-                    width="24"
+                  <ThreeDots
                     visible={true}
-                  /> :
-                    <span>Cadastrar</span>
-                  }
-              
+                    height="120"
+                    width="120"
+                    color="#00003c"
+                    radius="9"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                  />
+                </div> :
+                <span>Cadastrar</span>
+              }
+
             </button>
           </div>
         </form>

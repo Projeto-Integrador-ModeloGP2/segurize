@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { RotatingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import Usuario from "../../../models/Usuario";
 import { cadastrarUsuario } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
@@ -173,13 +173,25 @@ function Cadastro() {
                            flex justify-center"
             >
               {isLoading ? (
-                <RotatingLines
-                  strokeColor="white"
-                  strokeWidth="5"
-                  animationDuration="0.75"
-                  width="24"
+                <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  minHeight: "100vh", // ocupa 100% da altura da viewport
+                }}
+              >
+                <ThreeDots
                   visible={true}
+                  height="120"
+                  width="120"
+                  color="#00003c"
+                  radius="9"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
                 />
+              </div>
               ) : (
                 <span>Cadastrar</span>
               )}

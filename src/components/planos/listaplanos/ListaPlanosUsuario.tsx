@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
 import { buscar } from "../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import CardPlanosUsuario from "../cardplanos/CardPlanosUsuario";
 
@@ -97,14 +97,25 @@ function ListaPlanosUsuario() {
 
           {/* Carregando planos ou exibição */}
           {planosFiltrados.length === 0 && (
-            <DNA
+            <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "100vh", // ocupa 100% da altura da viewport
+            }}
+          >
+            <ThreeDots
               visible={true}
-              height="200"
-              width="200"
-              ariaLabel="dna-loading"
+              height="120"
+              width="120"
+              color="#00003c"
+              radius="9"
+              ariaLabel="three-dots-loading"
               wrapperStyle={{}}
-              wrapperClass="dna-wrapper mx-auto"
+              wrapperClass=""
             />
+          </div>
           )}
 
           {/* Exibição dos planos filtrados com cards */}

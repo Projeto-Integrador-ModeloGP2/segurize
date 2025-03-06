@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import Plano from "../../../models/Plano"
 import { buscar, deletar } from "../../../services/Service"
-import { RotatingLines } from "react-loader-spinner"
+import { ThreeDots } from "react-loader-spinner"
 import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarPlano() {
@@ -113,13 +113,25 @@ function DeletarPlano() {
                                    hover:bg-indigo-600 flex items-center justify-center'
                                    onClick={deletarPlano}>
                         {isLoading ?
-                            <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            /> :
+                            <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              minHeight: "100vh", // ocupa 100% da altura da viewport
+                            }}
+                          >
+                            <ThreeDots
+                              visible={true}
+                              height="120"
+                              width="120"
+                              color="#00003c"
+                              radius="9"
+                              ariaLabel="three-dots-loading"
+                              wrapperStyle={{}}
+                              wrapperClass=""
+                            />
+                          </div> :
                             <span>Sim</span>
                         }
                     </button>
