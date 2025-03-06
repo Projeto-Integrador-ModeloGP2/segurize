@@ -55,22 +55,22 @@ function FormPlanosMotos() {
   const modelosDisponiveis =
     marcas.find((m) => m.nome === marca)?.modelos || [];
 
-  const handleMarcaChange = (e) => {
+  const handleMarcaChange = (e: any) => {
     setMarca(e.target.value);
     setModelo(""); // Limpar o modelo ao trocar de marca
     setOutroMarca(""); // Limpar marca "Outro"
   };
 
-  const handleModeloChange = (e) => {
+  const handleModeloChange = (e: any) => {
     setModelo(e.target.value);
     setOutroModelo(""); // Limpar modelo "Outro"
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setAnoFabricacao(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     // Verifica se todos os campos necessários estão preenchidos

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
 import Seguradora from "../../../models/Seguradora";
-import Usuario from "../../../models/Usuario"; 
+import Usuario from "../../../models/Usuario";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { ThreeDots } from "react-loader-spinner";
 
@@ -21,7 +21,7 @@ function FormPlano() {
     nome: "",
     especialidade: "",
   });
-  
+
   // Estados para usuários
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [usuarioPlano, setUsuarioPlano] = useState<Usuario>({} as Usuario);
@@ -178,8 +178,6 @@ function FormPlano() {
     setPlano({ ...plano, status: !plano.status });
   }
 
-  const carregandoSeguradora = seguradora.nome === "";
-
   return (
     <div className="container flex flex-col mx-auto pt-30 items-center">
       <h1 className="text-4xl text-center my-8">
@@ -297,7 +295,11 @@ function FormPlano() {
         <div className="flex items-center gap-2 mt-3">
           <span>Status do Plano:</span>
           <label className="inline-flex items-center cursor-pointer">
-            <span className={`mr-2 ${plano.status ? "text-gray-500" : "text-red-600"}`}>
+            <span
+              className={`mr-2 ${
+                plano.status ? "text-gray-500" : "text-red-600"
+              }`}
+            >
               Inativo
             </span>
             <input
@@ -313,7 +315,11 @@ function FormPlano() {
                after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all
                peer-checked:after:translate-x-full peer-checked:after:border-white"
             ></div>
-            <span className={`ml-2 ${plano.status ? "text-green-600" : "text-gray-500"}`}>
+            <span
+              className={`ml-2 ${
+                plano.status ? "text-green-600" : "text-gray-500"
+              }`}
+            >
               Ativo
             </span>
           </label>
@@ -325,7 +331,13 @@ function FormPlano() {
           disabled={seguradora.nome === ""}
         >
           {isLoading ? (
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <ThreeDots
                 visible={true}
                 height="40"
