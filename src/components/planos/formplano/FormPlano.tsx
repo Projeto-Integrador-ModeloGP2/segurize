@@ -6,27 +6,33 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Plano from "../../../models/Plano";
 import Seguradora from "../../../models/Seguradora";
+import Usuario from "../../../models/Usuario"; 
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { ThreeDots } from "react-loader-spinner";
 
 function FormPlano() {
   const navigate = useNavigate();
-
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [seguradoras, setSeguradoras] = useState<Seguradora[]>([]);
 
+  // Estados para seguradoras (já existentes)
+  const [seguradoras, setSeguradoras] = useState<Seguradora[]>([]);
   const [seguradora, setSeguradora] = useState<Seguradora>({
     id: 0,
     nome: "",
     especialidade: "",
   });
+  
+  // Estados para usuários
+  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
+  const [usuarioPlano, setUsuarioPlano] = useState<Usuario>({} as Usuario);
+
   const [plano, setPlano] = useState<Plano>({} as Plano);
 
   const { id } = useParams<{ id: string }>();
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
+  // Função para buscar o plano pelo id (já existente)
   async function buscarPlanoPorId(id: string) {
     try {
       await buscar(`/planos/${id}`, setPlano, {
@@ -39,6 +45,7 @@ function FormPlano() {
     }
   }
 
+  // Função para buscar a seguradora pelo id (já existente)
   async function buscarSeguradoraPorId(id: string) {
     try {
       await buscar(`/seguradoras/${id}`, setSeguradora, {
@@ -51,6 +58,7 @@ function FormPlano() {
     }
   }
 
+  // Função para buscar a lista de seguradoras (já existente)
   async function buscarSeguradoras() {
     try {
       await buscar("/seguradoras", setSeguradoras, {
@@ -63,6 +71,34 @@ function FormPlano() {
     }
   }
 
+  // Nova função: Buscar a lista de usuários
+  async function buscarUsuarios() {
+    try {
+      await buscar("/usuarios/all", setUsuarios, {
+        headers: { Authorization: token },
+      });
+    } catch (error: any) {
+      if (error.toString().includes("403")) {
+        handleLogout();
+      }
+    }
+  }
+
+  // Nova função: Buscar usuário pelo id e atualizá-lo no estado usuarioPlano
+  async function buscarUsuarioPorId(id: string) {
+    try {
+      await buscar(`/usuarios/${id}`, setUsuarioPlano, {
+        headers: { Authorization: token },
+      });
+    } catch (error: any) {
+      if (error.toString().includes("403")) {
+        handleLogout();
+      } else {
+        alert("Erro ao buscar o usuário");
+      }
+    }
+  }
+
   useEffect(() => {
     if (token === "") {
       alert("Você precisa estar logado");
@@ -70,27 +106,31 @@ function FormPlano() {
     }
   }, [token]);
 
+  // Chama as funções de busca de seguradoras e usuários na montagem do componente.
   useEffect(() => {
     buscarSeguradoras();
+    buscarUsuarios();
 
     if (id !== undefined) {
       buscarPlanoPorId(id);
     }
   }, [id]);
 
+  // Quando a seguradora ou o usuário selecionado mudar, atualiza o plano
   useEffect(() => {
-    setPlano({
-      ...plano,
+    setPlano((prevPlano: Plano) => ({
+      ...prevPlano,
       seguradora: seguradora,
-    });
-  }, [seguradora]);
+      usuario: usuarioPlano, // Vincula o usuário selecionado
+    }));
+  }, [seguradora, usuarioPlano]);
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setPlano({
       ...plano,
       [e.target.name]: e.target.value,
       seguradora: seguradora,
-      usuario: usuario,
+      usuario: usuarioPlano,
     });
   }
 
@@ -105,11 +145,8 @@ function FormPlano() {
     if (id !== undefined) {
       try {
         await atualizar(`/planos`, plano, setPlano, {
-          headers: {
-            Authorization: token,
-          },
+          headers: { Authorization: token },
         });
-
         alert("Plano atualizado com sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
@@ -121,11 +158,8 @@ function FormPlano() {
     } else {
       try {
         await cadastrar(`/planos`, plano, setPlano, {
-          headers: {
-            Authorization: token,
-          },
+          headers: { Authorization: token },
         });
-
         alert("Plano cadastrado com sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
@@ -153,6 +187,7 @@ function FormPlano() {
       </h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoPlano}>
+        {/* Campos para os dados do plano */}
         <div className="flex flex-col gap-2">
           <label htmlFor="nome">Nome do Plano</label>
           <input
@@ -218,6 +253,7 @@ function FormPlano() {
           />
         </div>
 
+        {/* Dropdown para Seguradoras */}
         <div className="flex flex-col gap-2">
           <p>Seguradora do Plano</p>
           <select
@@ -229,11 +265,30 @@ function FormPlano() {
             <option value="" selected disabled>
               Selecione uma Seguradora
             </option>
+            {seguradoras.map((seg) => (
+              <option key={seg.id} value={seg.id}>
+                {seg.nome}
+              </option>
+            ))}
+          </select>
+        </div>
 
-            {seguradoras.map((seguradora) => (
-              <>
-                <option value={seguradora.id}>{seguradora.nome}</option>
-              </>
+        {/* Novo Dropdown para Usuários */}
+        <div className="flex flex-col gap-2">
+          <p>Usuário do Plano</p>
+          <select
+            name="usuario"
+            id="usuario"
+            className="border p-2 border-slate-800 rounded"
+            onChange={(e) => buscarUsuarioPorId(e.currentTarget.value)}
+          >
+            <option value="" selected disabled>
+              Selecione um Usuário
+            </option>
+            {usuarios.map((usu) => (
+              <option key={usu.id} value={usu.id}>
+                {usu.nome}
+              </option>
             ))}
           </select>
         </div>
@@ -242,7 +297,7 @@ function FormPlano() {
         <div className="flex items-center gap-2 mt-3">
           <span>Status do Plano:</span>
           <label className="inline-flex items-center cursor-pointer">
-            <span className={`mr-2 ${plano.status ? 'text-gray-500' : 'text-red-600'}`}>
+            <span className={`mr-2 ${plano.status ? "text-gray-500" : "text-red-600"}`}>
               Inativo
             </span>
             <input
@@ -258,7 +313,7 @@ function FormPlano() {
                after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all
                peer-checked:after:translate-x-full peer-checked:after:border-white"
             ></div>
-            <span className={`ml-2 ${plano.status ? 'text-green-600' : 'text-gray-500'}`}>
+            <span className={`ml-2 ${plano.status ? "text-green-600" : "text-gray-500"}`}>
               Ativo
             </span>
           </label>
@@ -266,29 +321,22 @@ function FormPlano() {
 
         <button
           type="submit"
-          className="rounded  bg-[#0A0A3C] hover:bg-blue-900
-                               text-white font-bold w-1/2 mx-auto py-2 mt-8 mb-15 flex justify-center"
-          disabled={carregandoSeguradora}
+          className="rounded bg-[#0A0A3C] hover:bg-blue-900 text-white font-bold w-1/2 mx-auto py-2 mt-8 mb-15 flex justify-center"
+          disabled={seguradora.nome === ""}
         >
           {isLoading ? (
-            <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <ThreeDots
-              visible={true}
-              height="40"
-              width="40"
-              color="#00003c"
-              radius="9"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-            />
-          </div>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <ThreeDots
+                visible={true}
+                height="40"
+                width="40"
+                color="#00003c"
+                radius="9"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
           ) : (
             <span>{id !== undefined ? "Atualizar" : "Cadastrar"}</span>
           )}
