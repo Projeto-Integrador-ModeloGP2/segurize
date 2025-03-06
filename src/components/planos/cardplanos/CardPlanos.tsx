@@ -18,14 +18,29 @@ function CardPlanos({ plano }: CardPlanoProps) {
           </h3>
         </div>
         <div className="p-4 ">
-          <h4 className="text-lg font-semibold uppercase">{plano.nome}</h4>
-          <p>{plano.descricao}</p>
-          <p>Valor: {plano.valor}</p>
-          <p>Vigência: {plano.vigencia}</p>
-          <p>Franquia: {plano.franquia}</p>
-          <p>Status: {plano.status ? "Ativo" : "Inativo"}</p>
-          <p>Seguradora: {plano.seguradora?.nome}</p>
-          <p>Usuário: {plano.usuario?.nome}</p>
+          <p>
+            <b>Descrição:</b> {plano.descricao}
+          </p>
+          <p>
+            <b>Valor: </b>
+            {plano.valor}
+          </p>
+          <p>
+            <b>Vigência:</b> {plano.vigencia}
+          </p>
+          <p>
+            <b>Franquia:</b> {plano.franquia}
+          </p>
+          <p>
+            <b>Status:</b> {plano.status ? "Ativo" : "Inativo"}
+          </p>
+          <p>
+            <b>Seguradora:</b> {plano.seguradora?.nome}
+          </p>
+          <p>
+            {" "}
+            <b>Usuário:</b> {plano.usuario?.nome}
+          </p>
         </div>
       </div>
 

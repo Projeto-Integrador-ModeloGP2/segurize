@@ -28,69 +28,54 @@ function Navbar() {
           {/* Links visíveis apenas para "messi@messi" */}
           {usuario.usuario === "adm@adm.com" && (
             <>
-              
               <Link
                 to="/cadastrarseguradora"
                 className="font-medium hover:scale-105"
               >
-                Adm Cadastrar Seguradora
+                Cadastrar Seguradora
               </Link>
-              <div>
-            |
-          </div>
+              <div>|</div>
               <Link
                 to="/cadastrarplano"
                 className="font-medium hover:scale-105"
               >
-                Adm Cadastrar Plano
+                Cadastrar Plano
               </Link>
 
-              <div>
-            |
-          </div>
+              <div>|</div>
 
               <Link to="/seguradoras" className="font-medium hover:scale-105">
-                Adm Editar Seguradoras
+                Editar Seguradoras
               </Link>
 
-              <div>
-            |
-          </div>
+              <div>|</div>
 
               <Link to="/planosadm" className="font-medium hover:scale-105">
-                Adm Editar Planos
+                Editar Planos
               </Link>
 
-              <div>
-            |
-          </div>
+              <div>|</div>
             </>
           )}
           {usuario.usuario !== "adm@adm.com" && (
             <>
-            <Link to="/planos" className="font-medium hover:scale-105">
-              Planos
-            </Link>
-            <div>
-            |
-          </div>
-          </>
+              <Link to="/planos" className="font-medium hover:scale-105">
+                Planos
+              </Link>
+              <div>|</div>
+            </>
           )}
           <Link to="/perfil" className="font-medium hover:scale-105">
             Perfil
           </Link>
-          <div>
-            |
-          </div>
+          <div>|</div>
           {usuario.usuario !== "messi@messi.com" && (
             <>
-            <Link to="/sobrenos" className="font-medium hover:scale-105">
-              Sobre Nós
-            </Link>
-            <div>
-            |
-          </div>
-          </>
+              <Link to="/sobrenos" className="font-medium hover:scale-105">
+                Sobre Nós
+              </Link>
+              <div>|</div>
+            </>
           )}
           <Link to="" onClick={logout} className="font-medium hover:scale-105">
             Sair
