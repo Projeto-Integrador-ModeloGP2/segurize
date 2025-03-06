@@ -20,20 +20,24 @@ function ListaUsuario() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
-    async function buscarPlanos() {
-        try {
-            await buscar('/planos', setPlanos, {
-                headers: {
-                    Authorization: token,
-                },
-            })
-
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-                handleLogout()
-            }
+   async function buscarPlanos() {
+    try {
+        await buscar('/planos', (dados: Plano[]) => {
+            // Filtra os planos para exibir apenas os do usuário logado
+            const planosFiltrados = dados.filter(plano => plano.usuario?.id === usuario.id);
+            setPlanos(planosFiltrados);
+        }, {
+            headers: {
+                Authorization: token,
+            },
+        });
+    } catch (error: any) {
+        if (error.toString().includes('403')) {
+            handleLogout();
         }
     }
+}
+
 
     useEffect(() => {
         if (token === '') {

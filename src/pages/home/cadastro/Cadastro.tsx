@@ -46,12 +46,17 @@ function Cadastro() {
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    // Verifica se a foto está vazia e atribui a imagem padrão caso esteja
+    if (!usuario.foto) {
+      usuario.foto = "https://media.istockphoto.com/id/1142192548/pt/vetorial/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=612x612&w=0&k=20&c=jM0A3ijNgtNtX3HANg6w9v0gttMeFriuA7ms_890hhc=";
+    }
+
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       setIsLoading(true);
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        ToastAlerta("'Usuário cadastrado com sucesso!", "sucesso");
+        ToastAlerta("Usuário cadastrado com sucesso!", "sucesso");
       } catch (error) {
         ToastAlerta("Erro ao cadastrar o usuário!", "erro");
       }
