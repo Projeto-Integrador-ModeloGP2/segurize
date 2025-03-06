@@ -130,7 +130,7 @@ function SubHome() {
                   alt="Chave sendo inserida em um cadeado"
                   className="w-12 h-12"
                 />
-                <p className="text-2xl">Com proteção</p>
+                <p className="text-2xl font-bold">Com proteção</p>
               </div>
 
               <p className="text-2xl mb-4">
@@ -143,7 +143,7 @@ function SubHome() {
                   alt="Homem deitado em um pato inflável na água"
                   className="w-12 h-12"
                 />
-                <p className="text-2xl">Faça tudo online</p>
+                <p className="text-2xl font-bold">Faça tudo online</p>
               </div>
 
               <p className="text-2xl mb-4">
@@ -156,7 +156,7 @@ function SubHome() {
                   alt="Mulher alterando as configurações de um sistema"
                   className="w-12 h-12"
                 />
-                <p className="text-2xl">Personalize</p>
+                <p className="text-2xl font-bold">Personalize</p>
               </div>
 
               <p className="text-2xl mb-4">
@@ -169,7 +169,7 @@ function SubHome() {
                   alt="Coelho competindo em uma corrida com uma barra de carregamento"
                   className="w-12 h-12"
                 />
-                <p className="text-2xl">No seu tempo</p>
+                <p className="text-2xl font-bold">No seu tempo</p>
               </div>
 
               <p className="text-2xl mt-4">

@@ -10,7 +10,7 @@ function Navbar() {
   }
 
   return (
-    <div className="w-full bg-[#00003C] text-white flex justify-center py-4 shadow-lg ">
+    <div className="w-full bg-[#00003C] text-white flex justify-center py-4 drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)]">
       <div className="container flex justify-between text-lg">
         <Link
           to="/subhome"
@@ -19,10 +19,10 @@ function Navbar() {
           <img src="/logo4.svg" alt="Segurize" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
-          <Link to="/login" className="font-bold hover:scale-105">
+          <Link to="/login" className="font-medium hover:scale-105">
             Login
           </Link>
-          <Link to="/sobrenos" className="font-bold hover:scale-105">
+          <Link to="/sobrenos" className="font-medium hover:scale-105">
             Sobre Nós
           </Link>
         </div>

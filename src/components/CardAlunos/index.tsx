@@ -12,8 +12,9 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className="border-slate-900 border flex flex-col rounded-2xl
-    overflow-hidden justify-between w-80 m-10 bg-[#b1c8dd] drop-shadow-[0_10px_25px_rgba(0,0,0,0.3)]
+      className="border-white/20 border flex flex-col rounded-2xl
+    overflow-hidden justify-between w-80 m-10 bg-[#b1c8dd]
+    drop-shadow-[0_5px_15px_rgba(0,0,0,0.2)]
 "
     >
       <div>
@@ -27,7 +28,9 @@ export default function Card({
 
         <div className="p-4">
           <strong className="flex itens-center justify-center">{name}</strong>
-          <p className="flex itens-center justify-center">{frase}</p>
+          <p className="flex itens-center justify-center text-gray-800">
+            {frase}
+          </p>
 
           <div
             className="justify-center flex m-5 flex-col
@@ -39,13 +42,13 @@ export default function Card({
 
             <div className="flex flex-row items-center justify-evenly">
               <a href={linkedin} target="_blank">
-                <LinkedinLogo size={48} weight="bold" />
+                <LinkedinLogo size={48} weight="regular" />
               </a>
               <a href={github} target="_blank">
-                <GithubLogo size={48} weight="bold" />
+                <GithubLogo size={48} weight="regular" />
               </a>
               <a href={email} target="_blank">
-                <Envelope size={50} weight="bold" />
+                <Envelope size={50} weight="regular" />
               </a>
             </div>
           </div>
