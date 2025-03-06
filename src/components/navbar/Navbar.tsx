@@ -26,7 +26,7 @@ function Navbar() {
 
         <div className="flex gap-4">
           {/* Links visíveis apenas para "messi@messi" */}
-          {usuario.usuario === "messi@messi.com" && (
+          {usuario.usuario === "adm@adm.com" && (
             <>
               
               <Link
@@ -66,7 +66,7 @@ function Navbar() {
           </div>
             </>
           )}
-          {usuario.usuario !== "messi@messi.com" && (
+          {usuario.usuario !== "adm@adm.com" && (
             <>
             <Link to="/planos" className="font-medium hover:scale-105">
               Planos
