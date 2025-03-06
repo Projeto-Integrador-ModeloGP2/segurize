@@ -81,14 +81,13 @@ function Login() {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
-                minHeight: "100vh", // ocupa 100% da altura da viewport
+                alignItems: "center"
               }}
             >
               <ThreeDots
                 visible={true}
-                height="120"
-                width="120"
+                height="40"
+                width="40"
                 color="#00003c"
                 radius="9"
                 ariaLabel="three-dots-loading"
