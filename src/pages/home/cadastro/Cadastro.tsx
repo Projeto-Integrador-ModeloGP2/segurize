@@ -6,14 +6,14 @@ import { RotatingLines } from "react-loader-spinner";
 import Usuario from "../../../models/Usuario";
 import { cadastrarUsuario } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
- 
+
 function Cadastro() {
   const navigate = useNavigate();
- 
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
- 
+
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
- 
+
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: "",
@@ -21,39 +21,40 @@ function Cadastro() {
     senha: "",
     foto: "",
   });
- 
+
   useEffect(() => {
     if (usuario.id !== 0) {
       retornar();
     }
   }, [usuario]);
- 
+
   function retornar() {
     navigate("/login");
   }
- 
+
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
     });
   }
- 
+
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmaSenha(e.target.value);
   }
- 
+
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
- 
+
     // Verifica se a foto está vazia e atribui a imagem padrão caso esteja
     if (!usuario.foto) {
-      usuario.foto = "https://media.istockphoto.com/id/1142192548/pt/vetorial/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=612x612&w=0&k=20&c=jM0A3ijNgtNtX3HANg6w9v0gttMeFriuA7ms_890hhc=";
+      usuario.foto =
+        "https://media.istockphoto.com/id/1142192548/pt/vetorial/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg?s=612x612&w=0&k=20&c=jM0A3ijNgtNtX3HANg6w9v0gttMeFriuA7ms_890hhc=";
     }
- 
+
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       setIsLoading(true);
- 
+
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
         ToastAlerta("Usuário cadastrado com sucesso!", "sucesso");
@@ -68,10 +69,10 @@ function Cadastro() {
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
- 
+
     setIsLoading(false);
   }
- 
+
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-b from-[#AEE2FF] to-[#DCE4FF]">
@@ -81,12 +82,12 @@ function Cadastro() {
             Seguros
           </h1>
           <img
-            src="public/veiculos/carromoto.png"
+            src="veiculos/carromoto.png"
             alt="Imagem Carro e Moto"
             className="w-full cursor-pointer scale-100"
           />
         </div>
- 
+
         <form
           className="flex justify-center items-center flex-col w-2/3 gap-3"
           onSubmit={cadastrarNovoUsuario}
@@ -195,5 +196,5 @@ function Cadastro() {
     </>
   );
 }
- 
+
 export default Cadastro;

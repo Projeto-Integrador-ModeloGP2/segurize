@@ -54,7 +54,7 @@ function SubHome() {
             <div className="flex justify-center">
               <Link to="/formplanoscarro">
                 <img
-                  src="public/veiculos/creta.png"
+                  src="veiculos/creta.png"
                   alt="Imagem Creta"
                   className="w-full cursor-pointer hover:scale-120 transition-transform duration-300"
                 />
@@ -64,7 +64,7 @@ function SubHome() {
             <div className="flex justify-center">
               <Link to="/formplanosmoto">
                 <img
-                  src="public/veiculos/r3.png"
+                  src="veiculos/r3.png"
                   alt="Imagem R3"
                   className="w-full cursor-pointer scale-70 hover:scale-80 transition-transform duration-350"
                 />
