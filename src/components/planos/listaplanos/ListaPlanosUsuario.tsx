@@ -65,6 +65,7 @@ function ListaPlanosUsuario() {
             currency: 'BRL',
         }).format(valor);
     };
+    
 
     return (
         <div className="flex justify-center w-full my-4">

@@ -54,10 +54,15 @@ function Navbar() {
           <Link to="/perfil" className="font-bold hover:scale-105">
             Perfil
           </Link>
+          <Link to="/teste" className="font-bold hover:scale-105">
+            teste
+          </Link>
           {usuario.usuario !== "messi@messi.com" && (
             <Link to="/sobrenos" className="font-bold hover:scale-105">
               Sobre Nós
             </Link>
+            
+            
           )}
           <Link to="" onClick={logout} className="font-bold hover:scale-105">
             Sair
