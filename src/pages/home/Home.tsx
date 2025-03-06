@@ -1,7 +1,7 @@
 function Home() {
     return (
         <>
-            <div className="bg-[url('/image8c.png')] bg-cover bg-center flex justify-center mt-18 pt-100">
+            <div className="bg-[url('/image8c.png')] bg-cover bg-center flex justify-center pt-100">
             </div>
 
             <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-10">
@@ -44,7 +44,7 @@ function Home() {
 
 
 
-            <div className="container grid grid-cols-2 items-center text-blue-800 gap-8 p-10">
+            <div className="container grid grid-cols-2 items-center text-[#0A0A3C] gap-8 p-10">
                 {/* Coluna de imagem à esquerda */}
                 <div className="flex justify-center mt-13 my-18">
                     <img

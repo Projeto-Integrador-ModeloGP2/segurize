@@ -9,10 +9,10 @@ function CardPlanos({ plano }: CardPlanoProps) {
   return (
     <div
       className="mt-30 border-slate-900 border 
-            flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2"
+            flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2 bg-[#b1c8dd]"
     >
       <div>
-        <div className="flex w-full bg-gradient-to-r from-green-300 to-blue-400 py-2 px-4 items-center gap-4">
+        <div className="flex w-full bg-[#0A0A3C] text-white py-2 px-4 items-center gap-4">
           <h3 className="text-lg font-bold text-center uppercase flex-1/2">
             {plano.nome}
           </h3>
@@ -32,7 +32,7 @@ function CardPlanos({ plano }: CardPlanoProps) {
       <div className="flex items-end justify-end m-2">
         <Link
           to={`/editarplano/${plano.id}`}
-          className="w-10 h-10 rounded-full bg-cyan-400 hover:bg-cyan-800 
+          className="w-10 h-10 rounded-full bg-[#0A0A3C] hover:bg-blue-900 
     flex items-center justify-center py-2 m-1"
         >
           <button>
@@ -43,8 +43,8 @@ function CardPlanos({ plano }: CardPlanoProps) {
         </Link>
         <Link
           to={`/deletarplano/${plano.id}`}
-          className=" bg-red-400 
-	hover:bg-red-700 w-10 h-10 rounded-full flex items-center justify-center m-1"
+          className=" bg-red-600 
+	hover:bg-red-500 w-10 h-10 rounded-full flex items-center justify-center m-1"
         >
           <button>
             <div className="w-5 h-5">

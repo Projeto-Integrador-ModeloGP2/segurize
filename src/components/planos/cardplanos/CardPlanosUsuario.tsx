@@ -12,8 +12,8 @@ function CardPlanosUsuario({ plano }: CardPlanoUsuarioProps) {
             "
     >
       <div>
-        <div className="flex w-full bg-blue-400 py-2 px-4 items-center gap-4">
-          <h3 className="text-lg font-bold text-center uppercase flex-1/2 text-gray-700">
+        <div className="flex w-full bg-[#0A0A3C] text-white py-2 px-4 items-center gap-4">
+          <h3 className="text-lg font-bold text-center uppercase flex-1/2">
             {plano.seguradora?.nome}
           </h3>
         </div>

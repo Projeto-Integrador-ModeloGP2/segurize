@@ -28,9 +28,7 @@ function Navbar() {
           {/* Links visíveis apenas para "messi@messi" */}
           {usuario.usuario === "messi@messi.com" && (
             <>
-              <Link to="/seguradoras" className="font-medium hover:scale-105">
-                Adm Editar Seguradoras
-              </Link>
+              
               <Link
                 to="/cadastrarseguradora"
                 className="font-medium hover:scale-105"
@@ -42,6 +40,10 @@ function Navbar() {
                 className="font-medium hover:scale-105"
               >
                 Adm Cadastrar Plano
+              </Link>
+
+              <Link to="/seguradoras" className="font-medium hover:scale-105">
+                Adm Editar Seguradoras
               </Link>
 
               <Link to="/planosadm" className="font-medium hover:scale-105">
