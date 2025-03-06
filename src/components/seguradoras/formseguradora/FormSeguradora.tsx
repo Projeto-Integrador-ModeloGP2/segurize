@@ -122,8 +122,8 @@ function FormSeguradora() {
           />
         </div>
         <button
-          className="rounded text-slate-100 bg-indigo-400 
-                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+          className="rounded text-slate-100 bg-[#0A0A3C] hover:bg-blue-900 
+                               w-1/2 py-2 mx-auto flex justify-center"
           type="submit"
         >
           {isLoading ? (

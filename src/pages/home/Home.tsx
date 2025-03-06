@@ -37,7 +37,7 @@ function Home() {
                     <img
                         src="/pneu.jpg"
                         alt="Imagem Página Home"
-                        className="scale-160 w-full max-w-xs scale-80 rounded-4xl rotate-z-2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+                        className="scale-160 w-full max-w-xs rounded-4xl rotate-z-2 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
                     />
                 </div>
             </div>

@@ -76,41 +76,41 @@ function DeletarPlano() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'>
+        <div className='container w-1/3 mx-auto '>
             <h1 className='text-4xl text-center my-4'>Deletar plano</h1>
             <p className='text-center font-semibold mb-4'>
                 Você tem certeza de que deseja apagar o plano a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <p className="p-2 text-2xl text-center bg-blue-200 h-full">
+            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between bg-[#b1c8dd]'>
+            <p className="p-2 text-2xl text-center bg-[#0A0A3C] text-white h-full">
         <strong>Seguradora</strong> {plano.seguradora ? plano.seguradora.nome : "Não informado"}
       </p>
-      <p className="p-2 text-1xl bg-white h-full">
+      <p className="p-2 text-1xl h-full">
         <strong>Plano:</strong> {plano.nome}
       </p>
-      <p className="p-2 text-1xl bg-white h-full">
+      <p className="p-2 text-1xl h-full">
         <strong>Descrição:</strong> {plano.descricao}
       </p>
-      <p className="p-2 text-1xl bg-white h-full">
+      <p className="p-2 text-1xl h-full">
         <strong>Valor (R$):</strong> {plano.valor}
       </p>
-      <p className="p-2 text-1xl bg-white h-full">
+      <p className="p-2 text-1xl h-full">
         <strong>Vigência:</strong> {plano.vigencia}
       </p>
-      <p className="p-2 text-1xl bg-white h-full">
+      <p className="p-2 text-1xl h-full">
         <strong>Franquia (R$):</strong> {plano.franquia}
       </p>
-      <p className="p-2 text-1xl bg-white h-full">
+      <p className="p-2 text-1xl h-full">
         <strong>Status:</strong> {plano.status ? "Ativo" : "Inativo"}
       </p>
                 <div className="flex">
                     <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        className='text-slate-100 bg-red-600 hover:bg-red-500 w-full py-2'
                         onClick={retornar}>
                         Não
                     </button>
                     <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                                   hover:bg-indigo-600 flex items-center justify-center'
+                        className='w-full text-slate-100 bg-[#0A0A3C] hover:bg-blue-900
+                                   flex items-center justify-center'
                                    onClick={deletarPlano}>
                         {isLoading ?
                             <div

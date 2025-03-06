@@ -76,25 +76,25 @@ function DeletarSeguradora() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'>
+        <div className='container w-1/3 mx-auto '>
             <h1 className='text-4xl text-center my-4'>Deletar Seguradora</h1>
             <p className='text-center font-semibold mb-4'>
                 Você tem certeza de que deseja apagar a seguradora a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between bg-[#b1c8dd]'>
                 <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl text-center'>
+                    className='py-2 px-6 bg-[#0A0A3C] text-white font-bold text-2xl text-center'>
                     {seguradora.nome}
                 </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{seguradora.especialidade}</p>
+                <p className='p-8 text-3xl h-full'>{seguradora.especialidade}</p>
                 <div className="flex">
                     <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        className='text-slate-100 bg-red-600 hover:bg-red-500 w-full py-2'
                         onClick={retornar}>
                         Não
                     </button>
                     <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                                   hover:bg-indigo-600 flex items-center justify-center'
+                        className='w-full text-slate-100 bg-[#0A0A3C] hover:bg-blue-900
+                                   flex items-center justify-center'
                                    onClick={deletarSeguradora}>
                         {isLoading ? 
                             <div

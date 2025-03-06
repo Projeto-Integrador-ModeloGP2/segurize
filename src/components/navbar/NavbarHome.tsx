@@ -22,6 +22,9 @@ function Navbar() {
           <Link to="/login" className="font-medium hover:scale-105">
             Login
           </Link>
+          <div>
+            |
+          </div>
           <Link to="/sobrenos" className="font-medium hover:scale-105">
             Sobre Nós
           </Link>

@@ -266,7 +266,7 @@ function FormPlano() {
 
         <button
           type="submit"
-          className="rounded  bg-cyan-400 hover:bg-cyan-800 
+          className="rounded  bg-[#0A0A3C] hover:bg-blue-900
                                text-white font-bold w-1/2 mx-auto py-2 mt-8 mb-15 flex justify-center"
           disabled={carregandoSeguradora}
         >
