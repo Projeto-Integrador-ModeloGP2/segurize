@@ -168,8 +168,8 @@ function Cadastro() {
             </button>
             <button
               type="submit"
-              className="rounded text-white bg-[#2DD4BF] 
-                           hover:bg-[#25B3A2] w-1/2 py-2
+              className="rounded text-white bg-[#0A0A3C] hover:bg-blue-900 
+                           w-1/2 py-2
                            flex justify-center"
             >
               {isLoading ? (
