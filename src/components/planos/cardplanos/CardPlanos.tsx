@@ -9,7 +9,7 @@ function CardPlanos({ plano }: CardPlanoProps) {
   return (
     <div
       className="mt-30 border-slate-900 border 
-            flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2 mt-10 "
+            flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2"
     >
       <div>
         <div className="flex w-full bg-gradient-to-r from-green-300 to-blue-400 py-2 px-4 items-center gap-4">

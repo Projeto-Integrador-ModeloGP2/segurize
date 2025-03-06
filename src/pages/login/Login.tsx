@@ -36,7 +36,7 @@ function Login() {
     <>
       <div
         className="grid grid-cols-1 lg:grid-cols-2 
-                    h-screen place-items-center font-bold bg-gradient-to-r from-green-300 to-blue-400"
+                    h-screen place-items-center font-bold bg-gradient-to-b from-[#AEE2FF] to-[#DCE4FF]"
       >
         <form
           className="flex justify-center items-center flex-col w-1/2 gap-4"
@@ -73,8 +73,8 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="rounded bg-blue-600 flex justify-center
-                                   hover:bg-blue-800 text-white w-1/2 py-2"
+            className="rounded bg-[#0000FF] flex justify-center
+                                   hover:bg-[#0055FF] text-white w-1/2 py-2"
           >
             {isLoading ? (
               <RotatingLines
@@ -93,14 +93,14 @@ function Login() {
 
           <p>
             Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline">
+            <Link to="/cadastro" className="text-[#0000FF] hover:underline">
               Cadastre-se
             </Link>
           </p>
         </form>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold mb-6 text-center text-[#0A0A3C]">
-            <span className="text-green-600 ">Segurize</span> Soluções em
+            <span className="text-[#0000FF] ">Segurize</span> Soluções em
             Seguros
           </h1>
           <img

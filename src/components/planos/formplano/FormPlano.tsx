@@ -9,7 +9,7 @@ import Seguradora from "../../../models/Seguradora";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 
-function FormPlano1() {
+function FormPlano() {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -287,4 +287,4 @@ function FormPlano1() {
   );
 }
 
-export default FormPlano1;
+export default FormPlano;
