@@ -131,7 +131,7 @@ function FormPlanosCarro() {
     );
 
     // Redireciona para a página "/carro"
-    navigate("/carro");
+    navigate("/subhome");
   };
 
   return (

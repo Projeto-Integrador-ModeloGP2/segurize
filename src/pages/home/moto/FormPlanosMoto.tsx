@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
@@ -91,7 +92,7 @@ function FormPlanosMotos() {
     );
 
     // Redireciona para a página "/carro"
-    navigate("/carro");
+    navigate("/subhome");
   };
 
   return (

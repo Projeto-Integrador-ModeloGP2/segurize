@@ -9,6 +9,7 @@ import Seguradora from "../../../models/Seguradora";
 import Usuario from "../../../models/Usuario";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { ThreeDots } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormPlano() {
   const navigate = useNavigate();
@@ -94,14 +95,14 @@ function FormPlano() {
       if (error.toString().includes("403")) {
         handleLogout();
       } else {
-        alert("Erro ao buscar o usuário");
+        ToastAlerta("Erro ao buscar o usuário", "erro");
       }
     }
   }
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      ToastAlerta("Você precisa estar logado!", "info");
       navigate("/");
     }
   }, [token]);
@@ -147,12 +148,12 @@ function FormPlano() {
         await atualizar(`/planos`, plano, setPlano, {
           headers: { Authorization: token },
         });
-        alert("Plano atualizado com sucesso");
+        ToastAlerta("Plano atualizado com sucesso!", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
           handleLogout();
         } else {
-          alert("Erro ao atualizar o Plano");
+          ToastAlerta("Erro ao atualizar o Plano", "erro");
         }
       }
     } else {
@@ -160,12 +161,12 @@ function FormPlano() {
         await cadastrar(`/planos`, plano, setPlano, {
           headers: { Authorization: token },
         });
-        alert("Plano cadastrado com sucesso");
+        ToastAlerta("Plano cadastrado com sucesso!", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
           handleLogout();
         } else {
-          alert("Erro ao cadastrar o Plano");
+          ToastAlerta("Erro ao cadastrar o Plano", "erro");
         }
       }
     }
