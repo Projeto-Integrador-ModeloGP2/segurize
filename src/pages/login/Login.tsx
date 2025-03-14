@@ -34,10 +34,7 @@ function Login() {
 
   return (
     <>
-      <div
-        className="grid grid-cols-1 lg:grid-cols-2 
-                    h-screen place-items-center font-bold bg-gradient-to-b from-[#AEE2FF] to-[#DCE4FF]"
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-gradient-to-b from-[#AEE2FF] to-[#DCE4FF]">
         <form
           className="flex justify-center items-center flex-col w-1/2 gap-4"
           onSubmit={login}
@@ -78,23 +75,23 @@ function Login() {
           >
             {isLoading ? (
               <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <ThreeDots
-                visible={true}
-                height="40"
-                width="40"
-                color="#00003c"
-                radius="9"
-                ariaLabel="three-dots-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-              />
-            </div>
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <ThreeDots
+                  visible={true}
+                  height="40"
+                  width="40"
+                  color="#00003c"
+                  radius="9"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
             ) : (
               <span>Entrar</span>
             )}
@@ -109,16 +106,19 @@ function Login() {
             </Link>
           </p>
         </form>
+
+        <div className=" hidden lg:block">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold mb-6 text-center text-[#0A0A3C]">
+          <h1 className="text-5xl font-bold mb-20 text-center text-[#0A0A3C]">
             <span className="text-[#0000FF] ">Segurize</span> Soluções em
             Seguros
           </h1>
           <img
-            src="veiculos/urus.png"
+            src="veiculos/login.png"
             alt="Imagem Página Home"
             className="w-full scale-90 rounded-4xl"
           />
+        </div>
         </div>
       </div>
     </>

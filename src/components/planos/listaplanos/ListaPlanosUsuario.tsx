@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
@@ -137,9 +138,9 @@ function ListaPlanosUsuario() {
               filtrados pelo seu preço máximo.
             </p>
             <img
-              src="veiculos/lancer.png"
+              src="veiculos/planos.png"
               alt="Imagem exemplo"
-              className="w-full "
+              className="w-full"
             />
           </div>
         </div>

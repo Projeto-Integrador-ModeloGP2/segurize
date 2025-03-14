@@ -84,7 +84,7 @@ function Cadastro() {
           <img
             src="veiculos/carromoto.png"
             alt="Imagem Carro e Moto"
-            className="w-full cursor-pointer scale-100"
+            className="w-full cursor-auto scale-100"
           />
         </div>
 
