@@ -46,6 +46,17 @@ function Cadastro() {
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (!usuario.nome.trim()) {
+      ToastAlerta("O campo 'Nome' é obrigatório!", "erro");
+      return;
+    }
+
+    if (!usuario.usuario.trim()) {
+      ToastAlerta("O campo 'Usuário' é obrigatório!", "erro");
+      return;
+    }
+
     // Verifica se a foto está vazia e atribui a imagem padrão caso esteja
     if (!usuario.foto) {
       usuario.foto =
@@ -71,7 +82,7 @@ function Cadastro() {
     }
 
     setIsLoading(false);
-  }
+}
 
   return (
     <>
