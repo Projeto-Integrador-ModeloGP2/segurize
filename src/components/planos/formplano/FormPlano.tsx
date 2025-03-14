@@ -136,7 +136,7 @@ function FormPlano() {
   }
 
   function retornar() {
-    navigate("/planos");
+    navigate("/planosadm");
   }
 
   async function gerarNovoPlano(e: ChangeEvent<HTMLFormElement>) {

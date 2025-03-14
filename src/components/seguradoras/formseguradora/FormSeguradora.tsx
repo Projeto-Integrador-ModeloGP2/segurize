@@ -77,7 +77,7 @@ function FormSeguradora() {
         await cadastrar(`/seguradoras`, seguradora, setSeguradora, {
           headers: { Authorization: token },
         });
-        ToastAlerta("'A Seguradora foi cadastrada com sucesso!", "sucesso");
+        ToastAlerta("A Seguradora foi cadastrada com sucesso!", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
           handleLogout();
