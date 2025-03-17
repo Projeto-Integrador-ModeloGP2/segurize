@@ -50,28 +50,32 @@ function SubHome() {
 
         {/* 2° Bloco - Veículos */}
         <div className="w-screen bg-[#F0F4FA] flex items-center justify-center">
-          <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
-            <div className="flex justify-center">
-              <Link to="/formplanoscarro">
-                <img
-                  src="veiculos/creta.png"
-                  alt="Imagem Creta"
-                  className="w-full cursor-pointer hover:scale-120 transition-transform duration-300"
-                />
-              </Link>
-            </div>
+  <div className="container grid grid-cols-2 items-center text-black gap-8 p-1">
+    <div className="flex flex-col items-center justify-center">
+      <span className="text-center text-lg font-semibold">Clique no carro e faça sua cotação</span>
+      <Link to="/formplanoscarro">
+        <img
+          src="veiculos/creta.png"
+          alt="Imagem Creta"
+          className="w-full cursor-pointer hover:scale-110 transition-transform duration-300 p-1"
+        />
+      </Link>
+    </div>
 
-            <div className="flex justify-center">
-              <Link to="/formplanosmoto">
-                <img
-                  src="veiculos/r3.png"
-                  alt="Imagem R3"
-                  className="w-full cursor-pointer scale-70 hover:scale-80 transition-transform duration-350"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col items-center justify-center">
+      <span className="text-center text-lg font-semibold mt-10">Clique na moto e faça sua cotação</span>
+      <Link to="/formplanosmoto">
+        <img
+          src="veiculos/r3.png"
+          alt="Imagem R3"
+          className="w-full cursor-pointer scale-70 hover:scale-80 transition-transform duration-350"
+        />
+      </Link>
+    </div>
+  </div>
+</div>
+
+
         {/* 3° Bloco  */}
         <div className="w-screen bg-[#00003C]">
           <div className="container grid grid-cols-2 items-center text-white gap-8 p-8">
