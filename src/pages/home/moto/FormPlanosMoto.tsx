@@ -15,40 +15,95 @@ function FormPlanosMotos() {
   const marcas = [
     {
       id: 1,
-      nome: "Honda",
-      modelos: ["CB 500", "CRF 250", "NXR 160", "CG 160"],
+      nome: "BMW",
+      modelos: [
+        "F 750 GS", "F 800 GS", "F 900 R", "F 900 XR", "G 310 GS", "G 310 R",
+        "K 1300 S", "K 1600 B", "K 1600 GTL", "R 1200 GS", "R 1200 RT", "R 1250 GSA",
+        "R 1250 GS", "R 1250 RT", "R 1250 RS", "S 1000 RR", "S 1000 XR", "S 1000 R", 
+        "S 1000 RR M Sport", "S 1000 XR"
+      ]
     },
-    { id: 2, nome: "Yamaha", modelos: ["Fazer 250", "MT-03", "R1", "XT 660"] },
+    {
+      id: 2,
+      nome: "Ducati",
+      modelos: [
+        "Diavel 1200", "Diavel 1260", "Hypermotard 950", "Monster 1200", "Monster 821",
+        "Multistrada 1200", "Multistrada 950", "Multistrada 1200 Enduro", "Panigale V2", 
+        "Panigale V4", "Panigale V4 S", "Panigale V4 R", "Scrambler 800", "Scrambler Icon", 
+        "Scrambler Desert Sled", "Streetfighter V4", "Streetfighter V4 S", "Supersport 950", 
+        "XDiavel", "XDiavel S", "Monster 797"
+      ]
+    },
     {
       id: 3,
-      nome: "Suzuki",
-      modelos: ["GSX 750", "DL 1000 V-Strom", "Intruder 125", "Bandit 1200"],
+      nome: "Harley-Davidson",
+      modelos: [
+        "Breakout 114", "Deluxe", "Electra Glide", "Fat Boy", "Fat Boy 114", "Heritage Classic",
+        "Iron 883", "Livewire", "Low Rider", "Pan America 1250", "Road Glide", "Road King",
+        "Sport Glide", "Sportster S", "Street 750", "Street Bob", "Street 500", "Ultra Limited", 
+        "Fat Bob", "Low Rider S"
+      ]
     },
     {
       id: 4,
-      nome: "Kawasaki",
-      modelos: ["Ninja 400", "Z900", "Versys 650", "Vulcan S"],
+      nome: "Honda",
+      modelos: [
+        "Africa Twin", "Biz 110i", "CB 250F", "CB 300R", "CB 500", "CB 500F", "CB 500X", "CB 650F", 
+        "CB 1000R", "CBR 1000RR", "CBR 1000RR-R Fireblade", "CBR 250R", "CBR 650R", "CG 160", 
+        "CRF 230F", "CRF 250", "Hornet 600", "NC 750X", "NXR 160", "XRE 190", "XRE 300", 
+        "CBR 650F", "XRE 190", "CBR 500R", "Hornet 600", "CBR 1000RR", "CBR 250R"
+      ]
     },
-    { id: 5, nome: "BMW", modelos: ["G 310 R", "F 750 GS", "R 1250 GS"] },
+    {
+      id: 5,
+      nome: "Kawasaki",
+      modelos: [
+        "KLR 650", "Ninja 1000", "Ninja 300", "Ninja 400", "Ninja H2", "Ninja ZX-6R", "Ninja ZX-10R", 
+        "Vulcan 500", "Vulcan S", "Z1000", "Z300", "Z650", "Z800", "Z900", "Versys 1000", "Versys 650", 
+        "Vulcan 900", "Z1000", "Z125 Pro", "Versys X 300"
+      ]
+    },
     {
       id: 6,
-      nome: "Ducati",
-      modelos: ["Monster 821", "Panigale V2", "Scrambler 800"],
+      nome: "KTM",
+      modelos: [
+        "1290 Super Duke R", "250 Adventure", "390 Adventure", "390 Duke", "Duke 125", "Duke 200", 
+        "Duke 250", "Duke 690", "RC 200", "RC 390", "RC 8C", "Super Adventure 890", "SX-F 250", 
+        "SX-F 450", "Super Adventure S", "250 EXC", "Super Duke 890", "Duke 990", "SX 450", 
+        "Super Adventure 1290"
+      ]
     },
     {
       id: 7,
-      nome: "Harley-Davidson",
-      modelos: ["Sportster S", "Street Bob", "Fat Boy"],
+      nome: "Suzuki",
+      modelos: [
+        "Bandit 1200", "Boulevard M800", "DL 1000 V-Strom", "DL 650 V-Strom", "GSX 1250F", "GSX 750",
+        "GSX-R1000", "GSX-R600", "GSX-R750", "GSX-S1000", "GSX-S750", "Intruder 125", "Inazuma 250", 
+        "SV 650", "V-Strom 650", "V-Strom 1000", "V-Strom 650 XT", "RM-Z 450", "V-Strom 250", 
+        "GSX-S150", "V-Strom 1000"
+      ]
     },
-    { id: 8, nome: "KTM", modelos: ["Duke 200", "390 Adventure", "RC 390"] },
-    { id: 9, nome: "Honda", modelos: ["Hornet 600", "NC 750X", "CBR 1000RR"] },
     {
-      id: 10,
+      id: 8,
       nome: "Triumph",
-      modelos: ["Bonneville T100", "Street Triple", "Tiger 800"],
+      modelos: [
+        "Bonneville T100", "Bonneville T120", "Bonneville Speedmaster", "Daytona 675", "Rocket 3", 
+        "Rocket 3 R", "Rocket 3 GT", "Scrambler 1200", "Speed Triple", "Speed Twin", "Street Bob", 
+        "Street Scrambler", "Street Triple", "Street Triple RS", "Thruxton RS", "Tiger 1200", 
+        "Tiger 800", "Tiger Sport 660", "Street Twin", "Tiger 800 XCa"
+      ]
     },
-    // Adicione outras marcas conforme necessário
+    {
+      id: 9,
+      nome: "Yamaha",
+      modelos: [
+        "Fazer 150", "Fazer 250", "Fazer 600", "MT-03", "MT-07", "MT-09", "MT-10", "NMAX 160", 
+        "R1", "R3", "R6", "R7", "R15", "Ténéré 250", "Ténéré 700", "XJ6", "XSR 700", "YZF-R1", 
+        "YZF-R6", "YZF-R3", "YZF-R15", "FZ6", "FZ25", "XMax 300", "FZ 25"
+      ]
+    }
   ];
+  
 
   const navigate = useNavigate();
 
