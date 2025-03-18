@@ -15,11 +15,11 @@ function CardUsuario({ plano }: CardPlanoProps) {
   return (
     <div className="mt-30 border-slate-900 border flex flex-col gap-4 rounded-xl overflow-hidden justify-between my-2">
       <div>
-        <div className="flex w-full bg-gradient-to-r from-green-300 to-blue-400 py-2 px-4 items-center gap-4">
+        <div className="flex w-full bg-[#0A0A3C] text-white py-2 px-4 items-center gap-4">
           <h3 className="text-lg font-bold text-center uppercase flex-1/2">{plano.nome}</h3>
         </div>
-        <div className="p-4">
-          <h4 className="text-lg font-semibold uppercase flex justify-between items-center">
+        <div className="p-4 bg-[#b1c8dd]">
+          <h4 className="text-lg font-semibold uppercase flex justify-between items-center ">
             {plano.nome}
             <button onClick={handleToggle} className="text-xl">
               {isExpanded ? "−" : "+"} {/* Ícone de expandir/recolher */}

@@ -12,13 +12,15 @@ import CardPlanosUsuario from "../cardplanos/CardPlanosUsuario";
 function ListaPlanosUsuario() {
   const navigate = useNavigate();
   const [planos, setPlanos] = useState<Plano[]>([]); // Lista de planos
-  const [faixaPreco, setFaixaPreco] = useState<number>(500); // Faixa de preço máximo
+  const [faixaPreco, setFaixaPreco] = useState<number>(150); // Faixa de preço máximo
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
+  const [loading, setLoading] = useState(true); // Estado para controlar carregamento
 
   // Função para buscar planos da API
   async function buscarPlanos() {
     try {
+      setLoading(true); // Inicia o carregamento
       await buscar(
         "/planos",
         (result: Plano[]) => {
@@ -34,6 +36,8 @@ function ListaPlanosUsuario() {
       if (error.toString().includes("403")) {
         handleLogout();
       }
+    } finally {
+      setLoading(false); // Finaliza o carregamento
     }
   }
 
@@ -86,7 +90,7 @@ function ListaPlanosUsuario() {
                   <input
                     type="range"
                     min="0"
-                    max="10000"
+                    max="5000"
                     step="10"
                     value={faixaPreco}
                     onChange={handlePrecoChange}
@@ -98,34 +102,21 @@ function ListaPlanosUsuario() {
             </div>
 
             {/* Carregando planos ou exibição */}
-            {planosFiltrados.length === 0 && (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  minHeight: "100vh", // ocupa 100% da altura da viewport
-                }}
-              >
-                <ThreeDots
-                  visible={true}
-                  height="120"
-                  width="120"
-                  color="#00003c"
-                  radius="9"
-                  ariaLabel="three-dots-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                />
+            {loading ? (
+              <div className="flex justify-center items-center min-h-[30vh]">
+                <ThreeDots height="120" width="120" color="#00003c" />
+              </div>
+            ) : planosFiltrados.length === 0 ? (
+              <div className="text-center text-lg text-[#00003C] font-semibold">
+                Sem planos nessa faixa de preço!
+              </div>
+            ) : (
+              <div className="flex flex-col gap-4 mt-4">
+                {planosFiltrados.map((plano) => (
+                  <CardPlanosUsuario key={plano.id} plano={plano} />
+                ))}
               </div>
             )}
-
-            {/* Exibição dos planos filtrados com cards */}
-            <div className="flex flex-col gap-4 mt-4">
-              {planosFiltrados.map((plano) => (
-                <CardPlanosUsuario key={plano.id} plano={plano} />
-              ))}
-            </div>
           </div>
 
           {/* Coluna Direita - Parágrafo e Imagem */}
